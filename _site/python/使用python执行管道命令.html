@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html">
+	<link rel="alternate" type="application/rss+xml" title="MK" href="http://localhost:4000/feed.xml">
+
+	<!-- Google font -->
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto Sans">
+
+	<!-- font awesome -->
+
+	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+</head>
+
+
+  
+
+  
+
+  </head>
+
+  <body>
+
+  <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>使用 python 执行管道命令</title>
+	<meta name="description" content="在 shell 下，使用管道执行脚本很爽。但是想直接使用 python 的 os.system 或 subprocess 实现都比较复杂。于是想了个招，用了一个方法简单实现了一下 :)" />
+</head>
+
+
+  <div class="wrapper">
+          <header class="post-header">
+
+    <center><div class="post-title" itemprop="name headline">使用 python 执行管道命令</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="02 Dec 2017" itemprop="datePublished">Dec 2 2017</time>
+
+		
+		<br>
+		<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>˚C</span>
+	</div>
+
+        
+        <div class="post-tags">
+        
+		<a class="post-tags-item" href="http://localhost:4000/tags/">python</a>
+        
+	</div>
+    </center>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <p>在 shell 下，使用管道执行脚本很爽。但是想直接使用 python 的 os.system 或 subprocess 实现都比较复杂。于是想了个招，用了一个方法简单实现了一下 :)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># coding: utf-8
+
+import os
+import subprocess
+import tempfile
+
+def runShell(cmd):
+    '''
+    将命令输入到临时文件，并执行，返回执行结果
+    '''
+    tmpFd, tmpFileName = tempfile.mkstemp()
+    os.write(tmpFd, cmd)
+    os.close(tmpFd)
+    result = execute("bash %s" % (tmpFileName))
+    os.remove(tmpFileName)
+    return result
+    
+def execute(cmdStr):
+    '''
+    执行命令行，返回执行结果（返回 stdout 或 stderr）
+    '''
+    cmd = cmdStr.split(" ")
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    stdout, err = p.communicate()
+    return err or stdout
+
+def main():
+    print runShell("docker images | grep 'open' | awk '{print $3}'")
+    pass
+
+if __name__ == '__main__':
+    main()
+</code></pre></div>
+
+
+</div>
+
+<div>
+	
+	<div class="eof"></div>
+	
+</div>
+
+<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=使用 python 执行管道命令@&amp;url=http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+  </div>
+
+</body>
+
+<foot>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <center>
+        
+		<p><a class="link" href="/archive/">Archive</a> /
+		<a class="link" href="/category/">Category</a> / 
+		<a class="link" href="/tags/">Tags</a> / 
+		<a class="link" href="/about/">About</a> /
+		<a class="link" href="/contact/">Contact</a>
+        </p>
+
+        <span><script>document.write(new Date().getFullYear());</script></span>
+        <span>&copy;</span>
+        
+		<a class="link" href="">MK# your name</a>
+		<br>
+    </center>
+    
+  </div>
+
+</footer>
+
+    <foot>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Derictory -->
+
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+	<!-- Hit analytics -->
+
+	<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+	<!-- Directory -->
+
+	<script src="/js/main.js"></script>
+</foot>
+
+
+</foot>
+
+</html>

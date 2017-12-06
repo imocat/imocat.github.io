@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- CSS -->
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html">
+	<link rel="alternate" type="application/rss+xml" title="MK" href="http://localhost:4000/feed.xml">
+
+	<!-- Google font -->
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto Sans">
+
+	<!-- font awesome -->
+
+	<link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+</head>
+
+
+  
+
+  
+
+  </head>
+
+  <body>
+
+  <head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>redis 集群搭建</title>
+	<meta name="description" content="0x001：下载 redis 4.0.1" />
+</head>
+
+
+  <div class="wrapper">
+          <header class="post-header">
+
+    <center><div class="post-title" itemprop="name headline">redis 集群搭建</div>
+
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="02 Dec 2017" itemprop="datePublished">Dec 2 2017</time>
+
+		
+		<br>
+		<i class="fa fa-eye"></i> <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-pulse"></i></span>˚C</span>
+	</div>
+
+        
+        <div class="post-tags">
+        
+		<a class="post-tags-item" href="http://localhost:4000/tags/">redis</a>
+        
+	</div>
+    </center>
+    
+</header>
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<div class="post-content">
+    <center>
+	
+	<p></p>
+	
+    </center>
+	<h2>Directory</h2>
+</div>
+
+<div id="category"></div>
+
+<div class="post-content" itemprop="articleBody">
+    <h2 id="0x001下载-redis-401">0x001：下载 redis 4.0.1</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ wget -c http://download.redis.io/releases/redis-4.0.1.tar.gz
+$ tar xf redis-4.0.1.tar.gz
+$ cd redis-4.0.1
+$ yum install -y gcc -y
+</code></pre></div>
+
+<h2 id="0x002安装-redis">0x002：安装 redis</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ make &amp;&amp; make install
+</code></pre></div>
+
+<h2 id="0x003安装-ruby-环境">0x003：安装 ruby 环境</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ wget -c https://github.com/postmodern/ruby-install/archive/master.zip
+$ yum install unzip -y &amp;&amp; unzip master.zip
+$ cd ruby-install-master
+$ make install
+$ ruby-install —system ruby
+</code></pre></div>
+
+<h2 id="0x004安装-ruby-gem">0x004：安装 ruby gem</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install redis
+</code></pre></div>
+
+<h2 id="0x005设置-redis-集群配置">0x005：设置 redis 集群配置</h2>
+
+<p>集群模式至少需要 3 个 master，3 个 slave：</p>
+
+<p>分别建立
+7000，7001，7002，7003，7004，7005 文件夹，并在文件夹下建立 redis.conf， 配置如下：
+（需将对应的 7000 修改成文件夹名称，如 7001 下的 redis.conf 文件中，port 7001，pidfile和dir相应的做写修改）</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bind 0.0.0.0
+port 7000
+daemonize yes
+pidfile "/var/run/7000.pid"
+cluster-enabled yes
+cluster-node-timeout 15000
+appendonly yes
+dir "/home/redis-cluster/replicas/7000"
+</code></pre></div>
+
+<h2 id="0x006启动redis集群实例">0x006：启动redis集群实例</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd 7000
+$ redis-server redis.conf
+</code></pre></div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd 7001
+…
+</code></pre></div>
+
+<h2 id="0x007加入集群">0x007：加入集群</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ redis-trib.rb create –replicas 1 \
+172.16.1.2:7000 \
+172.16.1.2:7001 \
+172.16.1.2:7002 \
+172.16.1.2:7003 \
+172.16.1.2:7004 \
+172.16.1.2:7005
+</code></pre></div>
+
+<h2 id="0x008测试">0x008：测试</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ redis-cli -c -p 7000
+</code></pre></div>
+
+</div>
+
+<div>
+	
+	<div class="eof"></div>
+	
+</div>
+
+<div class="share">
+    <p>Share this post with: </p>
+	<a href="https://twitter.com/intent/tweet?text=redis 集群搭建@&amp;url=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="twitter-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="facebook-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+    
+	<a href="https://plus.google.com/share?url=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="googleplus-share">
+		<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+		</span>
+	</a>
+</div>
+
+
+<div id="disqus_thread"></div>
+
+
+ 
+</div>
+
+
+</article>
+
+  </div>
+
+</body>
+
+<foot>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <center>
+        
+		<p><a class="link" href="/archive/">Archive</a> /
+		<a class="link" href="/category/">Category</a> / 
+		<a class="link" href="/tags/">Tags</a> / 
+		<a class="link" href="/about/">About</a> /
+		<a class="link" href="/contact/">Contact</a>
+        </p>
+
+        <span><script>document.write(new Date().getFullYear());</script></span>
+        <span>&copy;</span>
+        
+		<a class="link" href="">MK# your name</a>
+		<br>
+    </center>
+    
+  </div>
+
+</footer>
+
+    <foot>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Derictory -->
+
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+	<!-- Hit analytics -->
+
+	<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+	<!-- Directory -->
+
+	<script src="/js/main.js"></script>
+</foot>
+
+
+</foot>
+
+</html>
