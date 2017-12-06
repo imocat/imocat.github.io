@@ -1,0 +1,20 @@
+# Site settings
+title: MK
+name: MK# your name
+email: imocat#qq.com # your email address
+description: >
+    keep hungry keep foolish
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://imocat.github.io" # the base hostname & protocol for your site
+github_username: imocat # your Github username
+#disqus_username: imocat # your disqus username
+
+# google-analytics: UA-75034651-1 # add it if you have one
+
+skillstree: true # turn on or off the skills tree in about page
+
+# Build settings
+permalink: none
+markdown: kramdown
+kramdown:
+  input: GFM 
