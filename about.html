@@ -20,8 +20,11 @@ permalink: /about/
 		<li>
 			<i class="fa fa-github"></i><a href="https://github.com/{{ site.github_username }}"> Github</a>
 		</li>
+
+		{% if site.name != '' %}
 		<li>
 			<i class="fa fa-envelope"></i><a href="mailto:{{ site.email }}?subject=Hello&nbsp;{{ site.name }}"> Email</a>
 		</li>
+		{% endif %}
 	</ul>
 </p>
