@@ -6,13 +6,13 @@
 </description>
     <link>https://imocat.github.io/</link>
     <atom:link href="https://imocat.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Sep 2019 16:10:02 +0800</pubDate>
-    <lastBuildDate>Mon, 23 Sep 2019 16:10:02 +0800</lastBuildDate>
+    <pubDate>Mon, 23 Sep 2019 16:13:05 +0800</pubDate>
+    <lastBuildDate>Mon, 23 Sep 2019 16:13:05 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
         <title>systemctl 设置依赖服务</title>
-        <description>&lt;p&gt;如果 A 服务依赖 B 服务，可以通过在 &lt;code class=&quot;highlighter-rouge&quot;&gt;B.service&lt;/code&gt; 中设置 Requires 配置，让系统自动启动依赖服务&lt;/p&gt;
+        <description>&lt;p&gt;如果 B 服务依赖 A 服务，可以通过在 &lt;code class=&quot;highlighter-rouge&quot;&gt;B.service&lt;/code&gt; 中设置 Requires 配置，让系统自动启动依赖服务&lt;/p&gt;
 
 &lt;h2 id=&quot;aservice&quot;&gt;A.service&lt;/h2&gt;
 

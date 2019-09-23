@@ -8,7 +8,7 @@ tags: linux systemctl
 finished: true
 ---
 
-如果 A 服务依赖 B 服务，可以通过在 `B.service` 中设置 Requires 配置，让系统自动启动依赖服务
+如果 B 服务依赖 A 服务，可以通过在 `B.service` 中设置 Requires 配置，让系统自动启动依赖服务
 
 ## A.service
 

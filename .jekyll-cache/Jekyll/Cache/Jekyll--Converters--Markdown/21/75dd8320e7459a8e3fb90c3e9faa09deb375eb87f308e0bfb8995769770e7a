@@ -1,0 +1,31 @@
+I"�<p>如果 B 服务依赖 A 服务，可以通过在 <code class="highlighter-rouge">B.service</code> 中设置 Requires 配置，让系统自动启动依赖服务</p>
+
+<h2 id="aservice">A.service</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=A
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/your/app/path
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+
+<h2 id="bservice">B.service</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=A
+After=network.target
+Requires=A.service
+
+[Service]
+Type=simple
+ExecStart=/your/app/path
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+:ET
