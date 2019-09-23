@@ -10,7 +10,7 @@
 	<!-- CSS -->
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html">
+	<link rel="canonical" href="https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html">
 	<link rel="alternate" type="application/rss+xml" title="MK" href="https://imocat.github.io/feed.xml">
 
 	<!-- Google font -->
@@ -36,17 +36,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>使用不同的私钥连接不同的 git 服务器</title>
-	<meta name="description" content="使用 ssh 方式连接 git 服务器，在设置正确的 ssh-key 后，客户端任然提示输入用户名和密码，输入正确的用户名密码后任然提示授权不正确，可以尝试在 ~/.ssh 下新建 config 文件，并输入如下设置：" />
+	<title>修改 git 提交的姓名和邮箱地址</title>
+	<meta name="description" content="通常有两种情况：" />
 </head>
 
 
   <div class="wrapper">
           <header class="post-header">
 
-    <center><div class="post-title" itemprop="name headline">使用不同的私钥连接不同的 git 服务器</div>
+    <center><div class="post-title" itemprop="name headline">修改 git 提交的姓名和邮箱地址</div>
 
-		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="02 Dec 2017" itemprop="datePublished">Dec 2 2017</time>
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="15 Dec 2017" itemprop="datePublished">Dec 15 2017</time>
 
 		
 		<br>
@@ -78,19 +78,28 @@
 <div id="category"></div>
 
 <div class="post-content" itemprop="articleBody">
-    <p>使用 ssh 方式连接 git 服务器，在设置正确的 ssh-key 后，客户端任然提示输入用户名和密码，输入正确的用户名密码后任然提示授权不正确，可以尝试在 ~/.ssh 下新建 config 文件，并输入如下设置：</p>
+    <p>通常有两种情况：</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
-RSAAuthentication yes
-IdentityFile ~/.ssh/github_rsa
-User imocat
+<h2 id="全局修改">全局修改</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name 你的名字
+git config --global user.email 你的邮箱
 </code></pre></div></div>
 
-<p>其中 Host 指定为你的 git 仓库地址，  <br />
-IdentityFile 指定为本机生成的 rsa 文件路径<br />
-User 指定登录用户名</p>
+<h2 id="仅限当前项目">仅限当前项目</h2>
 
-<p>再次连接 git 服务器时，不会再次提示输入用户名密码</p>
+<p>方法很简单，不指定 –global 参数即可</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config user.name 你的名字
+git config user.email 你的邮箱
+</code></pre></div></div>
+
+<p>当然，也可以直接修改 .git/config 文件，增加或修改相应设置即可</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[user]
+name = 你的名字
+email = 你的邮箱地址
+</code></pre></div></div>
 
 </div>
 
@@ -102,21 +111,21 @@ User 指定登录用户名</p>
 
 <div class="share">
     <p>Share this post with: </p>
-	<a href="https://twitter.com/intent/tweet?text=使用不同的私钥连接不同的 git 服务器@&amp;url=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="twitter-share">
+	<a href="https://twitter.com/intent/tweet?text=修改 git 提交的姓名和邮箱地址@&amp;url=https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html" class="twitter-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://www.facebook.com/sharer/sharer.php?u=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="facebook-share">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html" class="facebook-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://plus.google.com/share?url=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="googleplus-share">
+	<a href="https://plus.google.com/share?url=https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html" class="googleplus-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>

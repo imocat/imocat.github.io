@@ -1,0 +1,23 @@
+I"3<p>通常有两种情况：</p>
+
+<h2 id="全局修改">全局修改</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user.name 你的名字
+git config --global user.email 你的邮箱
+</code></pre></div></div>
+
+<h2 id="仅限当前项目">仅限当前项目</h2>
+
+<p>方法很简单，不指定 –global 参数即可</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config user.name 你的名字
+git config user.email 你的邮箱
+</code></pre></div></div>
+
+<p>当然，也可以直接修改 .git/config 文件，增加或修改相应设置即可</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[user]
+name = 你的名字
+email = 你的邮箱地址
+</code></pre></div></div>
+:ET

@@ -10,7 +10,7 @@
 	<!-- CSS -->
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html">
+	<link rel="canonical" href="https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html">
 	<link rel="alternate" type="application/rss+xml" title="MK" href="https://imocat.github.io/feed.xml">
 
 	<!-- Google font -->
@@ -36,17 +36,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>使用不同的私钥连接不同的 git 服务器</title>
-	<meta name="description" content="使用 ssh 方式连接 git 服务器，在设置正确的 ssh-key 后，客户端任然提示输入用户名和密码，输入正确的用户名密码后任然提示授权不正确，可以尝试在 ~/.ssh 下新建 config 文件，并输入如下设置：" />
+	<title>pip启用阿里云镜像加速</title>
+	<meta name="description" content="修改对应的 pip.conf 文件，如 ~/.pip/pip.conf" />
 </head>
 
 
   <div class="wrapper">
           <header class="post-header">
 
-    <center><div class="post-title" itemprop="name headline">使用不同的私钥连接不同的 git 服务器</div>
+    <center><div class="post-title" itemprop="name headline">pip启用阿里云镜像加速</div>
 
-		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="02 Dec 2017" itemprop="datePublished">Dec 2 2017</time>
+		<div class="post-meta"><i class="fa fa-calendar-o"></i> <time datetime="15 Dec 2017" itemprop="datePublished">Dec 15 2017</time>
 
 		
 		<br>
@@ -58,7 +58,7 @@
         
 		<a class="post-tags-item" href="https://imocat.github.io/tags/">ssh</a>
         
-		<a class="post-tags-item" href="https://imocat.github.io/tags/">git</a>
+		<a class="post-tags-item" href="https://imocat.github.io/tags/">python</a>
         
 	</div>
     </center>
@@ -78,19 +78,16 @@
 <div id="category"></div>
 
 <div class="post-content" itemprop="articleBody">
-    <p>使用 ssh 方式连接 git 服务器，在设置正确的 ssh-key 后，客户端任然提示输入用户名和密码，输入正确的用户名密码后任然提示授权不正确，可以尝试在 ~/.ssh 下新建 config 文件，并输入如下设置：</p>
+    <p>修改对应的 pip.conf 文件，如 <code class="highlighter-rouge">~/.pip/pip.conf</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host github.com
-RSAAuthentication yes
-IdentityFile ~/.ssh/github_rsa
-User imocat
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
+index-url = http://mirrors.aliyun.com/pypi/simple
+
+[install]
+trusted-host = mirrors.aliyun.com
 </code></pre></div></div>
 
-<p>其中 Host 指定为你的 git 仓库地址，  <br />
-IdentityFile 指定为本机生成的 rsa 文件路径<br />
-User 指定登录用户名</p>
-
-<p>再次连接 git 服务器时，不会再次提示输入用户名密码</p>
+<p>保存后再次使用 pip 生效</p>
 
 </div>
 
@@ -102,21 +99,21 @@ User 指定登录用户名</p>
 
 <div class="share">
     <p>Share this post with: </p>
-	<a href="https://twitter.com/intent/tweet?text=使用不同的私钥连接不同的 git 服务器@&amp;url=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="twitter-share">
+	<a href="https://twitter.com/intent/tweet?text=pip启用阿里云镜像加速@&amp;url=https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html" class="twitter-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://www.facebook.com/sharer/sharer.php?u=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="facebook-share">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html" class="facebook-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://plus.google.com/share?url=https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html" class="googleplus-share">
+	<a href="https://plus.google.com/share?url=https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html" class="googleplus-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>

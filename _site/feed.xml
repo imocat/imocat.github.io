@@ -4,21 +4,111 @@
     <title>MK</title>
     <description>keep hungry keep foolish
 </description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 06 Dec 2017 21:02:35 +0800</pubDate>
-    <lastBuildDate>Wed, 06 Dec 2017 21:02:35 +0800</lastBuildDate>
-    <generator>Jekyll v3.6.2</generator>
+    <link>https://imocat.github.io/</link>
+    <atom:link href="https://imocat.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 23 Sep 2019 13:45:38 +0800</pubDate>
+    <lastBuildDate>Mon, 23 Sep 2019 13:45:38 +0800</lastBuildDate>
+    <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>pip启用阿里云镜像加速</title>
+        <description>&lt;p&gt;修改对应的 pip.conf 文件，如 &lt;code class=&quot;highlighter-rouge&quot;&gt;~/.pip/pip.conf&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[global]
+index-url = http://mirrors.aliyun.com/pypi/simple
+
+[install]
+trusted-host = mirrors.aliyun.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;保存后再次使用 pip 生效&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Dec 2017 00:00:00 +0800</pubDate>
+        <link>https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/python/pip%E5%90%AF%E7%94%A8%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E5%8A%A0%E9%80%9F.html</guid>
+        
+        <category>ssh</category>
+        
+        <category>python</category>
+        
+        
+        <category>python</category>
+        
+      </item>
+    
+      <item>
+        <title>修改 git 提交的姓名和邮箱地址</title>
+        <description>&lt;p&gt;通常有两种情况：&lt;/p&gt;
+
+&lt;h2 id=&quot;全局修改&quot;&gt;全局修改&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config --global user.name 你的名字
+git config --global user.email 你的邮箱
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;仅限当前项目&quot;&gt;仅限当前项目&lt;/h2&gt;
+
+&lt;p&gt;方法很简单，不指定 –global 参数即可&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git config user.name 你的名字
+git config user.email 你的邮箱
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;当然，也可以直接修改 .git/config 文件，增加或修改相应设置即可&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[user]
+name = 你的名字
+email = 你的邮箱地址
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 15 Dec 2017 00:00:00 +0800</pubDate>
+        <link>https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/git/%E4%BF%AE%E6%94%B9-git-%E6%8F%90%E4%BA%A4%E7%9A%84%E5%A7%93%E5%90%8D%E5%92%8C%E9%82%AE%E7%AE%B1%E5%9C%B0%E5%9D%80.html</guid>
+        
+        <category>ssh</category>
+        
+        <category>git</category>
+        
+        
+        <category>git</category>
+        
+      </item>
+    
+      <item>
+        <title>Python格式化时间</title>
+        <description>&lt;h3 id=&quot;格式化当前时间&quot;&gt;格式化当前时间:&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import datetime
+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;精确到毫秒&quot;&gt;精确到毫秒:&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;当前时间戳&quot;&gt;当前时间戳:&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import time
+time.time()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Thu, 07 Dec 2017 00:00:00 +0800</pubDate>
+        <link>https://imocat.github.io/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>使用不同的私钥连接不同的 git 服务器</title>
         <description>&lt;p&gt;使用 ssh 方式连接 git 服务器，在设置正确的 ssh-key 后，客户端任然提示输入用户名和密码，输入正确的用户名密码后任然提示授权不正确，可以尝试在 ~/.ssh 下新建 config 文件，并输入如下设置：&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github.com
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Host github.com
 RSAAuthentication yes
 IdentityFile ~/.ssh/github_rsa
 User imocat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;其中 Host 指定为你的 git 仓库地址，  &lt;br /&gt;
 IdentityFile 指定为本机生成的 rsa 文件路径&lt;br /&gt;
@@ -27,8 +117,8 @@ User 指定登录用户名&lt;/p&gt;
 &lt;p&gt;再次连接 git 服务器时，不会再次提示输入用户名密码&lt;/p&gt;
 </description>
         <pubDate>Sat, 02 Dec 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
-        <guid isPermaLink="true">http://localhost:4000/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
+        <link>https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/ssh%20git/%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%9A%84%E7%A7%81%E9%92%A5%E8%BF%9E%E6%8E%A5%E4%B8%8D%E5%90%8C%E7%9A%84git%E6%9C%8D%E5%8A%A1%E5%99%A8.html</guid>
         
         <category>ssh</category>
         
@@ -43,7 +133,7 @@ User 指定登录用户名&lt;/p&gt;
         <title>使用 python 执行管道命令</title>
         <description>&lt;p&gt;在 shell 下，使用管道执行脚本很爽。但是想直接使用 python 的 os.system 或 subprocess 实现都比较复杂。于是想了个招，用了一个方法简单实现了一下 :)&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# coding: utf-8
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# coding: utf-8
 
 import os
 import subprocess
@@ -75,12 +165,12 @@ def main():
 
 if __name__ == '__main__':
     main()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 </description>
         <pubDate>Sat, 02 Dec 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html</link>
-        <guid isPermaLink="true">http://localhost:4000/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html</guid>
+        <link>https://imocat.github.io/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/python/%E4%BD%BF%E7%94%A8python%E6%89%A7%E8%A1%8C%E7%AE%A1%E9%81%93%E5%91%BD%E4%BB%A4.html</guid>
         
         <category>python</category>
         
@@ -93,30 +183,30 @@ if __name__ == '__main__':
         <title>redis 集群搭建</title>
         <description>&lt;h2 id=&quot;0x001下载-redis-401&quot;&gt;0x001：下载 redis 4.0.1&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget -c http://download.redis.io/releases/redis-4.0.1.tar.gz
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget -c http://download.redis.io/releases/redis-4.0.1.tar.gz
 $ tar xf redis-4.0.1.tar.gz
 $ cd redis-4.0.1
 $ yum install -y gcc -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x002安装-redis&quot;&gt;0x002：安装 redis&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x003安装-ruby-环境&quot;&gt;0x003：安装 ruby 环境&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget -c https://github.com/postmodern/ruby-install/archive/master.zip
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget -c https://github.com/postmodern/ruby-install/archive/master.zip
 $ yum install unzip -y &amp;amp;&amp;amp; unzip master.zip
 $ cd ruby-install-master
 $ make install
 $ ruby-install —system ruby
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x004安装-ruby-gem&quot;&gt;0x004：安装 ruby gem&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install redis
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install redis
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x005设置-redis-集群配置&quot;&gt;0x005：设置 redis 集群配置&lt;/h2&gt;
 
@@ -126,7 +216,7 @@ $ ruby-install —system ruby
 7000，7001，7002，7003，7004，7005 文件夹，并在文件夹下建立 redis.conf， 配置如下：
 （需将对应的 7000 修改成文件夹名称，如 7001 下的 redis.conf 文件中，port 7001，pidfile和dir相应的做写修改）&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bind 0.0.0.0
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bind 0.0.0.0
 port 7000
 daemonize yes
 pidfile &quot;/var/run/7000.pid&quot;
@@ -134,37 +224,37 @@ cluster-enabled yes
 cluster-node-timeout 15000
 appendonly yes
 dir &quot;/home/redis-cluster/replicas/7000&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x006启动redis集群实例&quot;&gt;0x006：启动redis集群实例&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd 7000
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd 7000
 $ redis-server redis.conf
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd 7001
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd 7001
 …
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x007加入集群&quot;&gt;0x007：加入集群&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ redis-trib.rb create –replicas 1 \
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ redis-trib.rb create –replicas 1 \
 172.16.1.2:7000 \
 172.16.1.2:7001 \
 172.16.1.2:7002 \
 172.16.1.2:7003 \
 172.16.1.2:7004 \
 172.16.1.2:7005
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;0x008测试&quot;&gt;0x008：测试&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ redis-cli -c -p 7000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ redis-cli -c -p 7000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sat, 02 Dec 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</link>
-        <guid isPermaLink="true">http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</guid>
+        <link>https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html</guid>
         
         <category>redis</category>
         

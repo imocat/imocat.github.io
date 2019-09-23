@@ -10,8 +10,8 @@
 	<!-- CSS -->
 
 	<link rel="stylesheet" href="/css/main.css">
-	<link rel="canonical" href="http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html">
-	<link rel="alternate" type="application/rss+xml" title="MK" href="http://localhost:4000/feed.xml">
+	<link rel="canonical" href="https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html">
+	<link rel="alternate" type="application/rss+xml" title="MK" href="https://imocat.github.io/feed.xml">
 
 	<!-- Google font -->
 
@@ -56,7 +56,7 @@
         
         <div class="post-tags">
         
-		<a class="post-tags-item" href="http://localhost:4000/tags/">redis</a>
+		<a class="post-tags-item" href="https://imocat.github.io/tags/">redis</a>
         
 	</div>
     </center>
@@ -78,30 +78,30 @@
 <div class="post-content" itemprop="articleBody">
     <h2 id="0x001下载-redis-401">0x001：下载 redis 4.0.1</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ wget -c http://download.redis.io/releases/redis-4.0.1.tar.gz
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -c http://download.redis.io/releases/redis-4.0.1.tar.gz
 $ tar xf redis-4.0.1.tar.gz
 $ cd redis-4.0.1
 $ yum install -y gcc -y
-</code></pre></div>
+</code></pre></div></div>
 
 <h2 id="0x002安装-redis">0x002：安装 redis</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ make &amp;&amp; make install
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ make &amp;&amp; make install
+</code></pre></div></div>
 
 <h2 id="0x003安装-ruby-环境">0x003：安装 ruby 环境</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ wget -c https://github.com/postmodern/ruby-install/archive/master.zip
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -c https://github.com/postmodern/ruby-install/archive/master.zip
 $ yum install unzip -y &amp;&amp; unzip master.zip
 $ cd ruby-install-master
 $ make install
 $ ruby-install —system ruby
-</code></pre></div>
+</code></pre></div></div>
 
 <h2 id="0x004安装-ruby-gem">0x004：安装 ruby gem</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install redis
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install redis
+</code></pre></div></div>
 
 <h2 id="0x005设置-redis-集群配置">0x005：设置 redis 集群配置</h2>
 
@@ -111,7 +111,7 @@ $ ruby-install —system ruby
 7000，7001，7002，7003，7004，7005 文件夹，并在文件夹下建立 redis.conf， 配置如下：
 （需将对应的 7000 修改成文件夹名称，如 7001 下的 redis.conf 文件中，port 7001，pidfile和dir相应的做写修改）</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>bind 0.0.0.0
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bind 0.0.0.0
 port 7000
 daemonize yes
 pidfile "/var/run/7000.pid"
@@ -119,33 +119,33 @@ cluster-enabled yes
 cluster-node-timeout 15000
 appendonly yes
 dir "/home/redis-cluster/replicas/7000"
-</code></pre></div>
+</code></pre></div></div>
 
 <h2 id="0x006启动redis集群实例">0x006：启动redis集群实例</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd 7000
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 7000
 $ redis-server redis.conf
-</code></pre></div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd 7001
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd 7001
 …
-</code></pre></div>
+</code></pre></div></div>
 
 <h2 id="0x007加入集群">0x007：加入集群</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ redis-trib.rb create –replicas 1 \
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ redis-trib.rb create –replicas 1 \
 172.16.1.2:7000 \
 172.16.1.2:7001 \
 172.16.1.2:7002 \
 172.16.1.2:7003 \
 172.16.1.2:7004 \
 172.16.1.2:7005
-</code></pre></div>
+</code></pre></div></div>
 
 <h2 id="0x008测试">0x008：测试</h2>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ redis-cli -c -p 7000
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ redis-cli -c -p 7000
+</code></pre></div></div>
 
 </div>
 
@@ -157,21 +157,21 @@ $ redis-server redis.conf
 
 <div class="share">
     <p>Share this post with: </p>
-	<a href="https://twitter.com/intent/tweet?text=redis 集群搭建@&amp;url=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="twitter-share">
+	<a href="https://twitter.com/intent/tweet?text=redis 集群搭建@&amp;url=https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="twitter-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="facebook-share">
+	<a href="https://www.facebook.com/sharer/sharer.php?u=https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="facebook-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
 		</span>
 	</a>
     
-	<a href="https://plus.google.com/share?url=http://localhost:4000/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="googleplus-share">
+	<a href="https://plus.google.com/share?url=https://imocat.github.io/redis/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA.html" class="googleplus-share">
 		<span class="fa-stack fa-lg">
 			<i class="fa fa-circle fa-stack-2x"></i>
 			<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>

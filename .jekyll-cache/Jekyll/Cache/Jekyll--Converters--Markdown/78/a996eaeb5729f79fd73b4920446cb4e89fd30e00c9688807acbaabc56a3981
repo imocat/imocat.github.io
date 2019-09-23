@@ -1,0 +1,11 @@
+I"c<p>修改对应的 pip.conf 文件，如 <code class="highlighter-rouge">~/.pip/pip.conf</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[global]
+index-url = http://mirrors.aliyun.com/pypi/simple
+
+[install]
+trusted-host = mirrors.aliyun.com
+</code></pre></div></div>
+
+<p>保存后再次使用 pip 生效</p>
+:ET
