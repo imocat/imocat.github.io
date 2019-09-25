@@ -6,9 +6,53 @@
 </description>
     <link>https://imocat.github.io/</link>
     <atom:link href="https://imocat.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Sep 2019 16:13:05 +0800</pubDate>
-    <lastBuildDate>Mon, 23 Sep 2019 16:13:05 +0800</lastBuildDate>
+    <pubDate>Wed, 25 Sep 2019 20:44:46 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Sep 2019 20:44:46 +0800</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>使用 mongo 命令行执行 mongodb 命令</title>
+        <description>&lt;h2 id=&quot;直接执行代码&quot;&gt;直接执行代码&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo mongodb://user:pass@hostname:27017/admin --quiet --eval &quot;db.serverStatus()&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;从文件导入&quot;&gt;从文件导入&lt;/h2&gt;
+
+&lt;p&gt;将要执行的 mongodb 脚本写到 &lt;code class=&quot;highlighter-rouge&quot;&gt;import.js&lt;/code&gt; 中，然后执行以下命令完成导入&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mongo mongodb://user:pass@hostname:27017/admin --quiet import.js
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;需要注意的是，执行的代码是不支持诸如 &lt;code class=&quot;highlighter-rouge&quot;&gt;show dbs&lt;/code&gt; 、 &lt;code class=&quot;highlighter-rouge&quot;&gt;show tables&lt;/code&gt; 这样的命令。&lt;/p&gt;
+
+&lt;p&gt;如果需要显示数据库命令，建议用以下代码代替：&lt;/p&gt;
+
+&lt;h3 id=&quot;show-dbs&quot;&gt;show dbs&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;runCommand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;listDatabases&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;show-tables&quot;&gt;show tables&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getCollections&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Wed, 25 Sep 2019 00:00:00 +0800</pubDate>
+        <link>https://imocat.github.io/linux/%E4%BD%BF%E7%94%A8mongo%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4.html</link>
+        <guid isPermaLink="true">https://imocat.github.io/linux/%E4%BD%BF%E7%94%A8mongo%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4.html</guid>
+        
+        <category>linux</category>
+        
+        <category>mongodb</category>
+        
+        <category>javascript</category>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>systemctl 设置依赖服务</title>
