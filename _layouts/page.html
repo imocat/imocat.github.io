@@ -3,8 +3,9 @@ layout: null
 ---
 
 <html>
-  <head>
-      
+
+<head>
+
   {% include head.html %}
 
   {% if site.google-analytics %}
@@ -15,25 +16,30 @@ layout: null
   <meta http-equiv="refresh" content="10; url={{ site.baseurl }}">
   {% endif %}
 
-  </head>
-  
-  {% include header.html %}
+</head>
+
+{% include header.html %}
 
 <header class="post-header">
-	<center><div class="contact-title">{{ page.title }}</div>
-		<div class="contact-subtitle"><p>{{ page.subtitle }}</p></div></center>
+  <center>
+    <div class="contact-title">{{ page.title }}</div>
+    <div class="contact-subtitle">
+      <p>{{ page.subtitle }}</p>
+    </div>
+  </center>
 </header>
 
 <div class="wrapper">
-	<div class="post-content">
-		{{ content }}
-	</div>
+  <div class="post-content">
+    {{ content }}
+  </div>
 </div>
 
 <footer>
 
-{% include foot.html %}
-{% include footer.html %}
+  {% include foot.html %}
+  {% include footer.html %}
 
 </footer>
+
 </html>
