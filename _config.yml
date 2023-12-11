@@ -1,7 +1,6 @@
 # Site settings
 title: txxy
 name: txxy # your name
-email: hello#txxy.in # your email address
 description: >
     keep hungry keep foolish
 baseurl: "" # the subpath of your site, e.g. /blog
