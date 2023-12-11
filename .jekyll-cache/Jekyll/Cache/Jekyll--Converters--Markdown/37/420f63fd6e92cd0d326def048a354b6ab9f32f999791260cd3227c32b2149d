@@ -1,2 +1,0 @@
-I"�<p>如果 A 服务依赖 B 服务，可以通过在 <code class="highlighter-rouge">B.service</code> 中设置 Requires 配置，让系统自动启动依赖服务</p>
-:ET
