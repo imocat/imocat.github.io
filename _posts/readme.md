@@ -3,6 +3,8 @@ layout: post
 title: "隐私协议"
 subtitle: ""
 date: 2020-01-01
+category: app
+tags: app
 finished: true
 ---
 
