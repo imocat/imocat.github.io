@@ -73,7 +73,7 @@ const languages = {
       heading: '有任何问题吗？',
       description: '我们的团队随时准备帮助您解答任何关于 HotMyKey 的问题。',
       email: '📧 电子邮件',
-      emailValue: 'support@hotmykey.com',
+      emailValue: 'hello@txxy.in',
     },
     footer: {
       copyright: '© 2025 HotMyKey. 保留所有权利。'
@@ -153,7 +153,7 @@ const languages = {
       heading: 'Have Any Questions?',
       description: 'Our team is ready to help you with any questions about HotMyKey.',
       email: '📧 Email',
-      emailValue: 'support@hotmykey.com',
+      emailValue: 'hello@txxy.in',
     },
     footer: {
       copyright: '© 2025 HotMyKey. All rights reserved.'
