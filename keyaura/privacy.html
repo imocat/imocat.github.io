@@ -3,135 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeyAura 隱私政策 - 保護你的按鍵數據隱私</title>
+    <title>Privacy Policy - KeyAura</title>
     <style>
         :root {
             --primary-color: #007AFF;
             --text-color: #1d1d1f;
             --bg-color: #f5f5f7;
             --card-bg: #ffffff;
+            --secondary-text: #86868b;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--bg-color);
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 850px;
+            margin: 40px auto;
             background: var(--card-bg);
-            padding: 40px;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 語言切換器樣式 */
+        .lang-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .lang-btn {
+            padding: 8px 16px;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #000;
-        }
-
-        .effective-date {
-            color: #86868b;
+            border: 1px solid #d2d2d7;
+            background: #fff;
+            cursor: pointer;
             font-size: 14px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #d2d2d7;
-            padding-bottom: 20px;
+            transition: all 0.2s ease;
         }
 
-        h2 {
-            font-size: 22px;
-            margin-top: 30px;
-            color: var(--primary-color);
+        .lang-btn.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
         }
 
-        h3 {
-            font-size: 18px;
-            margin-top: 20px;
-        }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
 
-        p, li {
-            font-size: 16px;
-            color: #424245;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        .highlight-box {
-            background-color: rgba(0, 122, 255, 0.05);
-            border-left: 4px solid var(--primary-color);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+        h1 { font-size: 34px; font-weight: 700; margin-bottom: 10px; text-align: center; }
+        h2 { font-size: 24px; margin-top: 40px; color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        h3 { font-size: 19px; margin-top: 25px; }
+        p, li { font-size: 16px; color: #424245; }
+        
+        .highlight {
+            background: rgba(0, 122, 255, 0.06);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary-color);
+            margin: 30px 0;
         }
 
         .footer {
-            margin-top: 50px;
             text-align: center;
-            font-size: 14px;
-            color: #86868b;
+            margin-top: 60px;
+            font-size: 13px;
+            color: var(--secondary-text);
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+            .container { padding: 30px 20px; margin: 10px auto; }
+            h1 { font-size: 26px; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>KeyAura 隱私政策</h1>
-    <p class="effective-date">最後更新日期：2026年1月19日</p>
-
-    <p>歡迎使用 KeyAura。我們深知隱私對每一位 Mac 用戶的重要性。本隱私政策旨在說明我們如何處理你的按鍵統計數據，並向你保證你的隱私安全。</p>
-
-    <div class="highlight-box">
-        <strong>核心承諾：100% 本地儲存</strong><br>
-        KeyAura 的設計初衷是保護用戶隱私。與其他應用程式不同，<strong>KeyAura 不會收集、傳輸或在任何外部伺服器上儲存你的任何按鍵數據</strong>。所有數據僅保存在你個人的 Mac 設備上。
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('tc')">繁體中文</button>
+        <button class="lang-btn" onclick="switchLang('sc')">简体中文</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
     </div>
 
-    <h2>1. 數據收集與用途</h2>
-    <h3>A. 按鍵頻率數據</h3>
-    <p>KeyAura 追蹤按鍵的<strong>頻率</strong>以生成熱力圖和生產力統計數據。</p>
-    <ul>
-        <li><strong>本地處理：</strong> 所有按鍵統計僅在你的設備本地沙盒（Sandbox）內處理及儲存。</li>
-        <li><strong>不記錄內容：</strong> 本程式僅統計每個按鍵的點擊次數，<strong>不會</strong>記錄按鍵順序或輸入的具體文字內容。我們無法讀取你的密碼、訊息或任何敏感資料。</li>
-    </ul>
+    <div id="lang-tc" class="lang-content active">
+        <h1>KeyAura 隱私政策</h1>
+        <p style="text-align: center; color: #86868b;">最後更新：2026年1月19日</p>
+        
+        <div class="highlight">
+            <strong>核心承諾：100% 本地儲存</strong><br>
+            我們深知隱私對 Mac 用戶的重要性。<strong>KeyAura 不會收集、傳輸或在任何外部伺服器上儲存你的任何按鍵數據</strong>。所有數據僅保存在你個人的 Mac 設備上。
+        </div>
 
-    <h3>B. App Store 交易</h3>
-    <p>如果你購買 <strong>KeyAura Pro</strong>，交易將完全由 Apple 通過 StoreKit 2 處理。我們不會收集或儲存你的信用卡資料或個人賬單細節。Apple 僅向我們提供匿名交易收據以驗證你的專業版權益。</p>
+        <h2>1. 數據收集與用途</h2>
+        <h3>按鍵頻率統計</h3>
+        <p>本程式追蹤按鍵的點擊次數以生成熱力圖。數據僅在本地沙盒內處理，不設任何雲端備份或上傳。</p>
+        
+        <h2>2. 權限說明</h2>
+        <p>KeyAura 需要「輔助功能」權限來偵測按鍵點擊。此權限僅用於計數，<strong>絕不會</strong>記錄輸入的文字內容或密碼。</p>
 
-    <h2>2. 系統權限說明</h2>
-    <p>為了實現核心功能，KeyAura 需要 macOS 的<strong>「輔助功能」（Accessibility/Input Monitoring）</strong>權限。此權限僅用於偵測按鍵點擊動作以增加計數，絕不用於監控你的私人通訊。</p>
+        <h2>3. 聯絡我們</h2>
+        <p>開發者：AY (阿陽)<br>
+           地區：香港<br>
+           電郵：[你的聯絡電郵]</p>
+    </div>
 
-    <h2>3. 數據安全</h2>
-    <p>由於所有數據均保留在你的本地機器上，其安全性由 macOS 系統級加密（例如 FileVault）保障。我們建議你保持 macOS 系統更新，以確保本地文件的最高安全性。</p>
+    <div id="lang-sc" class="lang-content">
+        <h1>KeyAura 隐私政策</h1>
+        <p style="text-align: center; color: #86868b;">最后更新：2026年1月19日</p>
+        
+        <div class="highlight">
+            <strong>核心承诺：100% 本地存储</strong><br>
+            我们深知隐私的重要性。<strong>KeyAura 不会收集、传输或在任何外部服务器上存储您的任何按键数据</strong>。所有数据仅保存在您个人的 Mac 设备上。
+        </div>
 
-    <h2>4. 第三方服務</h2>
-    <p>KeyAura 不包含任何第三方追蹤器（如 Google Analytics 等）或廣告框架。我們堅持提供純淨、無追蹤的極客工具體驗。</p>
+        <h2>1. 数据收集与用途</h2>
+        <h3>按键频率统计</h3>
+        <p>本应用追踪按键的点击次数以生成热力图。数据仅在本地沙盒内处理，不设任何云端备份或上传。</p>
+        
+        <h2>2. 权限说明</h2>
+        <p>KeyAura 需要“辅助功能”权限来侦测按键点击。此权限仅用于计数，<strong>绝不会</strong>记录输入的文字内容或密码。</p>
 
-    <h2>5. 聯絡我們</h2>
-    <p>如果你對本隱私政策有任何疑問，歡迎聯繫我們：</p>
-    <ul>
-        <li>開發者：AY</li>
-        <li>地區：香港</li>
-        <li>電郵：[你的聯絡電郵]</li>
-    </ul>
+        <h2>3. 联系我们</h2>
+        <p>开发者：AY (阿阳)<br>
+           地区：中国香港<br>
+           电邮：[你的联络电邮]</p>
+    </div>
+
+    <div id="lang-en" class="lang-content">
+        <h1>Privacy Policy</h1>
+        <p style="text-align: center; color: #86868b;">Last Updated: Jan 19, 2026</p>
+        
+        <div class="highlight">
+            <strong>Core Commitment: 100% Local Storage</strong><br>
+            Your privacy is our priority. <strong>KeyAura does NOT collect, transmit, or store any of your keystroke data on external servers</strong>. All data stays exclusively on your local Mac.
+        </div>
+
+        <h2>1. Data Collection & Use</h2>
+        <h3>Keystroke Analytics</h3>
+        <p>KeyAura tracks key press frequencies to generate heatmaps. All processing happens locally within the macOS sandbox.</p>
+        
+        <h2>2. Permissions</h2>
+        <p>KeyAura requires "Accessibility" permissions to detect key presses. This is used for counting only; we <strong>never</strong> record actual text content or passwords.</p>
+
+        <h2>3. Contact Us</h2>
+        <p>Developer: AY<br>
+           Location: Hong Kong<br>
+           Email: [Your Support Email]</p>
+    </div>
 
     <div class="footer">
-        &copy; 2026 KeyAura. 保留所有權利。
+        &copy; 2026 KeyAura. All Rights Reserved.
     </div>
 </div>
+
+<script>
+    function switchLang(lang) {
+        // 隱藏所有內容
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        // 顯示選中內容
+        document.getElementById('lang-' + lang).classList.add('active');
+        
+        // 更新按鈕樣式
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
