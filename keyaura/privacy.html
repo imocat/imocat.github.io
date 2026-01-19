@@ -1,181 +1,244 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - KeyAura</title>
     <style>
-        :root {
-            --primary-color: #007AFF;
-            --text-color: #1d1d1f;
-            --bg-color: #f5f5f7;
-            --card-bg: #ffffff;
-            --secondary-text: #86868b;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.8;
+            padding: 2rem;
         }
 
         .container {
-            max-width: 850px;
-            margin: 40px auto;
-            background: var(--card-bg);
-            padding: 50px;
-            border-radius: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* 語言切換器樣式 */
-        .lang-switcher {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 40px;
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4f46e5;
         }
 
-        .lang-btn {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #d2d2d7;
-            background: #fff;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.2s ease;
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #10b981;
         }
 
-        .lang-btn.active {
-            background: var(--primary-color);
-            color: #fff;
-            border-color: var(--primary-color);
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #f8fafc;
         }
 
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
+        p {
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
 
-        h1 { font-size: 34px; font-weight: 700; margin-bottom: 10px; text-align: center; }
-        h2 { font-size: 24px; margin-top: 40px; color: var(--primary-color); border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h3 { font-size: 19px; margin-top: 25px; }
-        p, li { font-size: 16px; color: #424245; }
-        
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #94a3b8;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .last-updated {
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
         .highlight {
-            background: rgba(0, 122, 255, 0.06);
-            padding: 25px;
-            border-radius: 12px;
-            border-left: 5px solid var(--primary-color);
-            margin: 30px 0;
+            background: rgba(79, 70, 229, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: #818cf8;
         }
 
-        .footer {
-            text-align: center;
-            margin-top: 60px;
-            font-size: 13px;
-            color: var(--secondary-text);
+        a {
+            color: #4f46e5;
+            text-decoration: none;
         }
 
-        @media (max-width: 600px) {
-            .container { padding: 30px 20px; margin: 10px auto; }
-            h1 { font-size: 26px; }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #94a3b8;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            color: #4f46e5;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="lang-switcher">
-        <button class="lang-btn active" onclick="switchLang('tc')">繁體中文</button>
-        <button class="lang-btn" onclick="switchLang('sc')">简体中文</button>
-        <button class="lang-btn" onclick="switchLang('en')">English</button>
-    </div>
-
-    <div id="lang-tc" class="lang-content active">
-        <h1>KeyAura 隱私政策</h1>
-        <p style="text-align: center; color: #86868b;">最後更新：2026年1月19日</p>
-        
-        <div class="highlight">
-            <strong>核心承諾：100% 本地儲存</strong><br>
-            我們深知隱私對 Mac 用戶的重要性。<strong>KeyAura 不會收集、傳輸或在任何外部伺服器上儲存你的任何按鍵數據</strong>。所有數據僅保存在你個人的 Mac 設備上。
-        </div>
-
-        <h2>1. 數據收集與用途</h2>
-        <h3>按鍵頻率統計</h3>
-        <p>本程式追蹤按鍵的點擊次數以生成熱力圖。數據僅在本地沙盒內處理，不設任何雲端備份或上傳。</p>
-        
-        <h2>2. 權限說明</h2>
-        <p>KeyAura 需要「輔助功能」權限來偵測按鍵點擊。此權限僅用於計數，<strong>絕不會</strong>記錄輸入的文字內容或密碼。</p>
-
-        <h2>3. 聯絡我們</h2>
-        <p>開發者：AY (阿陽)<br>
-           地區：香港<br>
-           電郵：[你的聯絡電郵]</p>
-    </div>
-
-    <div id="lang-sc" class="lang-content">
-        <h1>KeyAura 隐私政策</h1>
-        <p style="text-align: center; color: #86868b;">最后更新：2026年1月19日</p>
-        
-        <div class="highlight">
-            <strong>核心承诺：100% 本地存储</strong><br>
-            我们深知隐私的重要性。<strong>KeyAura 不会收集、传输或在任何外部服务器上存储您的任何按键数据</strong>。所有数据仅保存在您个人的 Mac 设备上。
-        </div>
-
-        <h2>1. 数据收集与用途</h2>
-        <h3>按键频率统计</h3>
-        <p>本应用追踪按键的点击次数以生成热力图。数据仅在本地沙盒内处理，不设任何云端备份或上传。</p>
-        
-        <h2>2. 权限说明</h2>
-        <p>KeyAura 需要“辅助功能”权限来侦测按键点击。此权限仅用于计数，<strong>绝不会</strong>记录输入的文字内容或密码。</p>
-
-        <h2>3. 联系我们</h2>
-        <p>开发者：AY (阿阳)<br>
-           地区：中国香港<br>
-           电邮：[你的联络电邮]</p>
-    </div>
-
-    <div id="lang-en" class="lang-content">
+    <div class="container">
         <h1>Privacy Policy</h1>
-        <p style="text-align: center; color: #86868b;">Last Updated: Jan 19, 2026</p>
-        
-        <div class="highlight">
-            <strong>Core Commitment: 100% Local Storage</strong><br>
-            Your privacy is our priority. <strong>KeyAura does NOT collect, transmit, or store any of your keystroke data on external servers</strong>. All data stays exclusively on your local Mac.
-        </div>
+        <p class="last-updated">Last Updated: January 19, 2026</p>
 
-        <h2>1. Data Collection & Use</h2>
-        <h3>Keystroke Analytics</h3>
-        <p>KeyAura tracks key press frequencies to generate heatmaps. All processing happens locally within the macOS sandbox.</p>
-        
-        <h2>2. Permissions</h2>
-        <p>KeyAura requires "Accessibility" permissions to detect key presses. This is used for counting only; we <strong>never</strong> record actual text content or passwords.</p>
+        <h2>1. Information We Collect</h2>
+        <p>KeyAura is designed to respect your privacy. We collect only the minimum information necessary for the app to function:</p>
 
-        <h2>3. Contact Us</h2>
-        <p>Developer: AY<br>
-           Location: Hong Kong<br>
-           Email: [Your Support Email]</p>
+        <h3>1.1 Keyboard Usage Data</h3>
+        <ul>
+            <li><span class="highlight">Keystroke counts:</span> The number of times each key is pressed on your keyboard</li>
+            <li><span class="highlight">Timestamps:</span> When keystrokes occur (for daily data organization)</li>
+            <li><span class="highlight">Keyboard layout:</span> Your selected keyboard layout preference</li>
+            <li><span class="highlight">App settings:</span> Color scheme, heatmap style, and display preferences</li>
+        </ul>
+
+        <h3>1.2 System Information</h3>
+        <ul>
+            <li><span class="highlight">Accessibility permissions:</span> Whether you have granted accessibility permissions (required for keyboard monitoring)</li>
+            <li><span class="highlight">License status:</span> Whether you're using the free Core version or Pro version</li>
+        </ul>
+
+        <h2>2. Data Storage</h2>
+        <h3>2.1 Local Storage Only</h3>
+        <p>All data collected by KeyAura is stored <span class="highlight">locally on your Mac</span>. We do not upload, transmit, or store any data on our servers.</p>
+
+        <h3>2.2 Storage Location</h3>
+        <p>Your data is stored in:</p>
+        <ul>
+            <li><span class="highlight">Location:</span> <code>~/Library/Application Support/KeyAura/</code></li>
+            <li><span class="highlight">Format:</span> SQLite database</li>
+            <li><span class="highlight">Encryption:</span> Data is stored in plain text (consider encrypting your Mac for additional security)</li>
+        </ul>
+
+        <h3>2.3 Data Retention</h3>
+        <p>KeyAura retains your keyboard usage data <span class="highlight">indefinitely</span> until you choose to delete it. You can delete all data at any time through the app's settings.</p>
+
+        <h2>3. Data We DO NOT Collect</h2>
+        <p>KeyAura does <span class="highlight">NOT</span> collect:</p>
+        <ul>
+            <li>✗ The actual characters you type (we only count key presses)</li>
+            <li>✗ Passwords, personal information, or sensitive data</li>
+            <li>✗ Screenshots or screen recordings</li>
+            <li>✗ Application usage or browsing history</li>
+            <li>✗ Location data or device identifiers</li>
+            <li>✗ Any data transmitted over the internet</li>
+        </ul>
+
+        <h2>4. How We Use Your Data</h2>
+        <p>We use your data <span class="highlight">exclusively</span> for:</p>
+        <ul>
+            <li>✓ Generating keyboard heatmap visualizations</li>
+            <li>✓ Displaying usage statistics (total keystrokes, most used keys)</li>
+            <li>✓ Providing historical data analysis (daily, weekly, monthly, yearly)</li>
+            <li>✓ Saving your app preferences</li>
+            <li>✓ Managing your license status (free vs Pro)</li>
+        </ul>
+
+        <h2>5. Third-Party Services</h2>
+        <h3>5.1 Apple App Store</h3>
+        <p>If you download KeyAura from the Mac App Store, Apple may collect:</p>
+        <ul>
+            <li>Your Apple ID and email address</li>
+            <li>Device information</li>
+            <li>App usage statistics</li>
+        </ul>
+        <p>Please refer to Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank">Privacy Policy</a> for details.</p>
+
+        <h3>5.2 Apple StoreKit (Pro Version)</h3>
+        <p>If you purchase KeyAura Pro, Apple may collect:</p>
+        <ul>
+            <li>Purchase transaction data</li>
+            <li>Payment information</li>
+            <li>Receipt verification data</li>
+        </ul>
+        <p>Please refer to Apple's <a href="https://www.apple.com/legal/privacy/" target="_blank">Privacy Policy</a> for details.</p>
+
+        <h2>6. Data Sharing</h2>
+        <p>KeyAura <span class="highlight">does not share</span> your data with any third parties. We do not sell, rent, or trade your personal information.</p>
+
+        <h2>7. Your Rights</h2>
+        <p>You have the following rights regarding your data:</p>
+        <ul>
+            <li><span class="highlight">Access:</span> View all collected data through the app's interface</li>
+            <li><span class="highlight">Delete:</span> Permanently delete all keyboard usage data at any time</li>
+            <li><span class="highlight">Export:</span> Export your data as JSON for personal use</li>
+            <li><span class="highlight">Opt-out:</span> Disable keyboard monitoring at any time</li>
+        </ul>
+
+        <h2>8. Children's Privacy</h2>
+        <p>KeyAura is not directed to children under 13. We do not knowingly collect personal information from children.</p>
+
+        <h2>9. Security</h2>
+        <p>We implement reasonable security measures to protect your data:</p>
+        <ul>
+            <li>✓ All data stored locally on your device</li>
+            <li>✓ No internet transmission of keystroke data</li>
+            <li>✓ Regular app updates to address security vulnerabilities</li>
+        </ul>
+        <p>However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>We may update this privacy policy from time to time. We will notify you of any changes by:</p>
+        <ul>
+            <li>Posting the new policy on this page</li>
+            <li>Updating the "Last Updated" date</li>
+            <li>Notifying users through app updates (if applicable)</li>
+        </ul>
+
+        <h2>11. Accessibility Permissions</h2>
+        <p>KeyAura requires <span class="highlight">Accessibility permissions</span> to function. This permission allows the app to:</p>
+        <ul>
+            <li>Monitor global keyboard events</li>
+            <li>Count key presses</li>
+            <li>Identify which keys are being pressed</li>
+        </ul>
+        <p><span class="highlight">Important:</span> KeyAura does NOT read the actual characters you type. It only counts which keys are pressed and how often.</p>
+
+        <h2>12. Contact Us</h2>
+        <p>If you have any questions about this privacy policy or our data practices, please contact us:</p>
+        <ul>
+            <li><span class="highlight">Email:</span> <a href="mailto:hello@txxy.in">hello@txxy.in</a></li>
+        </ul>
+
+        <h2>13. License Agreement</h2>
+        <p>By using KeyAura, you agree to this privacy policy. If you do not agree with this policy, please do not use the app.</p>
+
+        <hr style="border-color: #334155; margin: 3rem 0;">
+
+        <p style="text-align: center; color: #64748b;">
+            © 2026 KeyAura Team. All rights reserved.
+        </p>
     </div>
-
-    <div class="footer">
-        &copy; 2026 KeyAura. All Rights Reserved.
-    </div>
-</div>
-
-<script>
-    function switchLang(lang) {
-        // 隱藏所有內容
-        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-        // 顯示選中內容
-        document.getElementById('lang-' + lang).classList.add('active');
-        
-        // 更新按鈕樣式
-        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
-    }
-</script>
-
 </body>
 </html>
