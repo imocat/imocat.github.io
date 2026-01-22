@@ -546,24 +546,24 @@
                 <li><a href="#heatmap" data-i18n="nav_heatmap">Heatmap</a></li>
                 <li><a href="#pricing" data-i18n="nav_pricing">Pricing</a></li>
                 <li><a href="#download" data-i18n="nav_download">Download</a></li>
+                <li><a href="support.html" data-i18n="nav_support">Support</a></li>
             </ul>
         </div>
         <div class="nav-right">
             <div class="language-selector">
                 <button class="language-btn" onclick="toggleLanguageDropdown()">
-                    <span id="currentLangFlag">🇺🇸</span>
                     <span id="currentLangText">EN</span>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M7 10l5 5 5-5z"/></svg>
                 </button>
                 <div class="language-dropdown" id="languageDropdown">
                     <div class="language-option active" onclick="setLanguage('en')" data-lang="en">
-                        <span></span> En
+                        En
                     </div>
                     <div class="language-option" onclick="setLanguage('zh-Hans')" data-lang="zh-Hans">
-                        <span></span> 简体
+                        简体
                     </div>
                     <div class="language-option" onclick="setLanguage('zh-Hant')" data-lang="zh-Hant">
-                        <span></span> 繁體
+                        繁體
                     </div>
                 </div>
             </div>
@@ -759,7 +759,7 @@
             
             <div class="pricing-card featured">
                 <h3>Pro</h3>
-                <div class="price">$9.99<span data-i18n="price_lifetime">/lifetime</span></div>
+                <div class="price">$14.99<span data-i18n="price_lifetime">/lifetime</span></div>
                 <ul class="pricing-features">
                     <li data-i18n="feature_pro_all">All Core features</li>
                     <li data-i18n="feature_pro_alltime">Full time range statistics</li>
@@ -790,7 +790,7 @@
     <footer>
         <p>KeyAura © 2026 KeyAura Team. <span data-i18n="footer_localization">Localization: English, 简体中文, 繁體中文</span></p>
         <p style="margin-top: 0.5rem;">
-            <a href="#" data-i18n="footer_privacy">Privacy Policy</a> · <a href="#" data-i18n="footer_terms">Terms</a> · <a href="#" data-i18n="footer_contact">Contact</a>
+            <a href="support.html" data-i18n="footer_support">Support</a>
         </p>
     </footer>
 
@@ -802,6 +802,7 @@
                 nav_heatmap: 'Heatmap',
                 nav_pricing: 'Pricing',
                 nav_download: 'Download',
+                nav_support: 'Support',
                 nav_download_free: 'Download',
                 hero_title_highlight: 'Keyboard Usage',
                 hero_title_visualized: 'Visualized',
@@ -854,14 +855,14 @@
                 btn_download: 'Download',
                 footer_localization: 'Localization: English, 简体中文, 繁體中文',
                 footer_privacy: 'Privacy Policy',
-                footer_terms: 'Terms',
-                footer_contact: 'Contact'
+                footer_support: 'Support'
             },
             'zh-Hans': {
                 nav_features: '功能特性',
                 nav_heatmap: '热力图',
                 nav_pricing: '价格',
                 nav_download: '下载',
+                nav_support: '支持',
                 nav_download_free: '免费下载',
                 hero_title_highlight: '可视化你的',
                 hero_title_visualized: '键盘使用习惯',
@@ -914,14 +915,14 @@
                 btn_download: '下载',
                 footer_localization: '本地化支持：English, 简体中文, 繁體中文',
                 footer_privacy: '隐私政策',
-                footer_terms: '使用条款',
-                footer_contact: '联系我们'
+                footer_support: '技术支持'
             },
             'zh-Hant': {
                 nav_features: '功能特色',
                 nav_heatmap: '熱力圖',
                 nav_pricing: '價格',
                 nav_download: '下載',
+                nav_support: '支援',
                 nav_download_free: '免費下載',
                 hero_title_highlight: '視覺化你的',
                 hero_title_visualized: '鍵盤使用習慣',
@@ -974,15 +975,8 @@
                 btn_download: '下載',
                 footer_localization: '本地化支援：English, 簡體中文, 繁體中文',
                 footer_privacy: '隱私政策',
-                footer_terms: '使用條款',
-                footer_contact: '聯繫我們'
+                footer_support: '技術支援'
             }
-        };
-
-        const languageFlags = {
-            'en': '',
-            'zh-Hans': '',
-            'zh-Hant': ''
         };
 
         const languageNames = {
@@ -1033,8 +1027,7 @@
             // Update HTML lang attribute
             document.documentElement.lang = lang;
             
-            // Update flag and text
-            document.getElementById('currentLangFlag').textContent = languageFlags[lang];
+            // Update text
             document.getElementById('currentLangText').textContent = languageNames[lang];
             
             // Update dropdown active state
