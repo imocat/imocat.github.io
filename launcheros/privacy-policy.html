@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>启动器隐私政策</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f6f7fb;
+            --card: rgba(255, 255, 255, 0.9);
+            --text: #1b1f29;
+            --muted: #5b6475;
+            --line: rgba(18, 28, 45, 0.1);
+            --accent: #1f6fff;
+            --shadow: 0 18px 48px rgba(20, 30, 50, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1115;
+                --card: rgba(24, 27, 34, 0.92);
+                --text: #f3f5f8;
+                --muted: #b5becc;
+                --line: rgba(255, 255, 255, 0.1);
+                --accent: #8fb4ff;
+                --shadow: 0 20px 52px rgba(0, 0, 0, 0.35);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, rgba(31, 111, 255, 0.12), transparent 28%),
+                radial-gradient(circle at top right, rgba(117, 84, 255, 0.08), transparent 24%),
+                var(--bg);
+        }
+
+        .wrap {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 48px 20px 72px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            backdrop-filter: blur(18px);
+        }
+
+        header {
+            padding: 40px 40px 28px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: clamp(30px, 5vw, 44px);
+            line-height: 1.12;
+        }
+
+        .subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        main {
+            padding: 10px 40px 40px;
+        }
+
+        section {
+            padding-top: 26px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 22px;
+        }
+
+        p {
+            margin: 0 0 12px;
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .note {
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(31, 111, 255, 0.08);
+            border: 1px solid rgba(31, 111, 255, 0.14);
+            color: var(--muted);
+        }
+
+        .contact {
+            margin-top: 12px;
+            padding: 16px 18px;
+            border-radius: 16px;
+            border: 1px dashed var(--line);
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            padding: 0 40px 36px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+            font-size: 0.94em;
+        }
+
+        @media (max-width: 680px) {
+            header,
+            main,
+            footer {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="card">
+            <header>
+                <h1>启动器隐私政策</h1>
+                <p class="subtitle">最后更新日期：2026 年 3 月 18 日</p>
+            </header>
+
+            <main>
+                <section>
+                    <h2>1. 政策概述</h2>
+                    <p>欢迎使用“启动器”。我们重视你的隐私，并致力于以清晰、透明的方式说明本应用如何处理数据。</p>
+                    <p>启动器是一款在 macOS 上运行的应用启动器。根据当前版本的实现，应用主要在你的设备本地处理数据，不会将你的个人数据上传到开发者服务器。</p>
+                </section>
+
+                <section>
+                    <h2>2. 我们会处理哪些数据</h2>
+                    <p>为了提供应用展示、搜索、排序、文件夹管理和快捷键功能，启动器可能会在你的设备本地处理以下信息：</p>
+                    <ul>
+                        <li>已安装应用的信息，例如应用名称、Bundle Identifier、应用路径、分类信息、应用图标以及用于搜索的本地匹配词。</li>
+                        <li>你在启动器中的布局与组织信息，例如页面顺序、图标位置、文件夹名称、文件夹内容和分页布局。</li>
+                        <li>你的设置与偏好，例如是否启用全局快捷键、快捷键组合、排序模式、行列数设置和循环翻页设置。</li>
+                        <li>应用使用记录，例如某个应用的启动次数和最近使用时间，用于“最近使用优先”与“智能排序”等功能。</li>
+                        <li>应用图标缓存，用于提升显示速度和界面响应体验。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>3. 这些数据如何使用</h2>
+                    <p>我们仅将上述数据用于以下目的：</p>
+                    <ul>
+                        <li>扫描并展示你设备上的应用。</li>
+                        <li>支持应用搜索、排序、分页展示和文件夹功能。</li>
+                        <li>保存你的个性化布局与使用偏好。</li>
+                        <li>根据本地使用记录提供最近使用或智能排序能力。</li>
+                        <li>缓存图标资源，以改善加载性能。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>4. 数据存储位置</h2>
+                    <p>根据当前版本实现，启动器会将相关数据保存在你设备本地的应用支持目录中，通常位于 macOS 的 <code>Application Support</code> 容器内。</p>
+                    <p>可能包含的本地数据文件包括但不限于：</p>
+                    <ul>
+                        <li><code>apps-cache.json</code>：应用扫描缓存</li>
+                        <li><code>layout.json</code>：页面布局与文件夹结构</li>
+                        <li><code>preferences.json</code>：设置与偏好</li>
+                        <li><code>usage.json</code>：本地使用记录</li>
+                        <li><code>IconCache/</code>：图标缓存文件</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>5. 数据是否会上传或共享</h2>
+                    <p>根据当前版本实现：</p>
+                    <ul>
+                        <li>我们不会将上述数据上传到开发者服务器。</li>
+                        <li>我们不会出售、出租或以广告投放为目的共享你的个人数据。</li>
+                        <li>我们当前未集成第三方广告 SDK，也未集成第三方用户画像或行为分析服务。</li>
+                    </ul>
+                    <div class="note">
+                        如果未来版本新增云同步、崩溃分析、诊断上报或其他在线功能，我们会在更新后的隐私政策中明确说明。
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6. 应用启动与系统交互</h2>
+                    <p>当你在启动器中点击某个应用时，启动器会调用 macOS 提供的系统接口来启动对应应用。</p>
+                    <p>当你使用“在访达中显示”等功能时，启动器会调用系统接口在访达中定位相应应用文件。</p>
+                    <p>这些操作仅在你的设备本地完成，目的是执行你主动发起的操作请求。</p>
+                </section>
+
+                <section>
+                    <h2>7. 全局快捷键</h2>
+                    <p>如果你启用了全局快捷键，启动器会在本地保存你选择的快捷键组合，并在设备本地响应该快捷键以呼出启动器界面。</p>
+                    <p>快捷键信息仅用于本地功能实现，不会被上传到外部服务器。</p>
+                </section>
+
+                <section>
+                    <h2>8. 儿童隐私</h2>
+                    <p>启动器不是面向儿童定向设计的服务。我们不会主动收集儿童个人信息。由于当前版本主要在本地处理数据，且不提供在线账户系统，我们不会基于年龄建立用户档案。</p>
+                </section>
+
+                <section>
+                    <h2>9. 数据保留与删除</h2>
+                    <p>本地数据会在你的设备上保留，直到发生以下任一情况：</p>
+                    <ul>
+                        <li>你在应用内重建缓存或重置相关数据。</li>
+                        <li>你删除应用及其本地容器数据。</li>
+                        <li>你通过系统或手动方式清理本地应用支持目录中的相关文件。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>10. 你的权利</h2>
+                    <p>由于当前版本的数据主要保存在你的设备本地，你通常可以通过删除本地数据或卸载应用来控制相关信息。</p>
+                    <p>如果你对隐私政策、数据处理方式或合规问题有疑问，可以通过下方联系方式与我们联系。</p>
+                </section>
+
+                <section>
+                    <h2>11. 政策更新</h2>
+                    <p>我们可能会根据功能更新、法律要求或产品调整对本隐私政策进行修订。若本政策发生重大变更，我们会通过应用页面、官网或产品更新说明发布新的版本。</p>
+                </section>
+
+                <section>
+                    <h2>12. 联系我们</h2>
+                    <div class="contact">
+                        <p>如果你对本隐私政策有任何问题、意见或数据请求，请联系：</p>
+                        <p>联系邮箱：hello@txxy.in</p>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                本文档为启动器当前版本的隐私政策 HTML 页面
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
