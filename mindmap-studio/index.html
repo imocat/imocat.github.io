@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindmap Studio | 把想法摊开，再长成结构</title>
+    <meta
+      name="description"
+      content="Mindmap Studio 是一款为思考、整理与表达而生的脑图工具，用更安静的画布、更自然的结构和更顺手的操作，把模糊想法整理成清晰框架。"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#hero" aria-label="Mindmap Studio 首页">
+          <span class="brand__dot"></span>
+          <span class="brand__text">Mindmap Studio</span>
+        </a>
+        <nav class="topbar__nav" aria-label="页面导航">
+          <a href="#features">能力</a>
+          <a href="#workflow">流程</a>
+          <a href="#scenes">场景</a>
+          <a href="#cta">开始使用</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero reveal" id="hero">
+          <div class="hero__copy">
+            <h1>把想法摊开，再长成结构。</h1>
+            <p class="hero__lead">
+              Mindmap Studio 让脑图回到最原始的价值：梳理、连接、推演。没有被模板绑架的花哨界面，只有一张安静、顺手、足够专业的无限画布。
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#cta">下载 macOS 版</a>
+              <a class="button button--ghost" href="#workflow">查看工作方式</a>
+            </div>
+
+            <dl class="hero__stats" aria-label="产品亮点">
+              <div>
+                <dt>无限画布</dt>
+                <dd>让分支自然生长，不挤在固定模板里。</dd>
+              </div>
+              <div>
+                <dt>轻量操作</dt>
+                <dd>缩放、拖拽、分支扩展都围绕思考流设计。</dd>
+              </div>
+              <div>
+                <dt>清晰表达</dt>
+                <dd>从灵感草图，到可分享的结构化成果。</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__visual">
+            <div class="canvas-window" aria-label="脑图编辑界面示意">
+              <div class="canvas-window__bar">
+                <span class="mac-dots">
+                  <i></i><i></i><i></i>
+                </span>
+                <strong>Mindmap Studio</strong>
+                <span class="canvas-window__status">演示画布</span>
+              </div>
+
+              <div class="canvas-window__toolbar">
+                <button type="button" aria-label="撤销">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M9 7 4 12l5 5" />
+                    <path d="M20 12H4" />
+                    <path d="M10 7c6 0 10 3 10 9" />
+                  </svg>
+                </button>
+                <button type="button" aria-label="搜索">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="11" cy="11" r="6"></circle>
+                    <path d="m20 20-4.2-4.2"></path>
+                  </svg>
+                </button>
+                <button type="button" aria-label="导出">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3v12"></path>
+                    <path d="m7 10 5 5 5-5"></path>
+                    <path d="M5 21h14"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="canvas-window__body">
+                <div class="canvas-grid"></div>
+                <svg class="mindmap-scene" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid meet" aria-label="脑图结构演示">
+                  <g class="mindmap-branches" aria-hidden="true">
+                    <path d="M408 360 C 500 360, 540 260, 640 240"></path>
+                    <path d="M408 360 C 500 360, 540 500, 640 500"></path>
+                    <path d="M800 240 C 870 240, 900 150, 972 144"></path>
+                    <path d="M800 240 C 870 240, 900 300, 972 314"></path>
+                    <path d="M800 500 C 870 500, 900 448, 972 444"></path>
+                    <path d="M800 500 C 870 500, 900 610, 972 624"></path>
+                  </g>
+
+                  <g class="map-node map-node--center active" tabindex="0">
+                    <rect x="236" y="324" width="172" height="72" rx="24"></rect>
+                    <text x="322" y="369" text-anchor="middle">未命名想法</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="640" y="204" width="160" height="72" rx="24"></rect>
+                    <text x="720" y="249" text-anchor="middle">核心分支</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="640" y="464" width="160" height="72" rx="24"></rect>
+                    <text x="720" y="509" text-anchor="middle">补充分支</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="972" y="108" width="168" height="72" rx="24"></rect>
+                    <text x="1056" y="153" text-anchor="middle">产品定位</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="972" y="278" width="168" height="72" rx="24"></rect>
+                    <text x="1056" y="323" text-anchor="middle">功能框架</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="972" y="408" width="168" height="72" rx="24"></rect>
+                    <text x="1056" y="453" text-anchor="middle">使用流程</text>
+                  </g>
+
+                  <g class="map-node" tabindex="0">
+                    <rect x="972" y="588" width="168" height="72" rx="24"></rect>
+                    <text x="1056" y="633" text-anchor="middle">交付计划</text>
+                  </g>
+                </svg>
+
+                <div class="zoom-dock">
+                  <button type="button" aria-label="缩小">-</button>
+                  <div class="zoom-dock__value">112%</div>
+                  <button type="button" aria-label="放大">+</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero__notes" aria-label="画布说明">
+              <div class="floating-chip">
+                <strong>思考更安静</strong>
+                <span>纸感网格、轻阴影、低干扰工具条</span>
+              </div>
+              <div class="floating-chip">
+                <strong>结构更自然</strong>
+                <span>从中心扩展到层级分支，逻辑一眼可见</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="features">
+          <div class="section__heading">
+            <p class="eyebrow">Core capabilities</p>
+            <h2>专为“把脑内结构讲清楚”而设计</h2>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <span class="feature-card__index">01</span>
+              <h3>无限画布，不打断思路</h3>
+              <p>
+                先放下结论，把想法平铺出来。Mindmap Studio
+                提供像纸面一样自然的画布秩序，让思路从一个节点生长成一张完整认知图。
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-card__index">02</span>
+              <h3>分支清晰，层级自然</h3>
+              <p>
+                节点、连线和层级关系都被设计成一眼可读。你不是在排版组件，而是在组织逻辑，这一点页面会替你兜住。
+              </p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-card__index">03</span>
+              <h3>轻工具感，重专注感</h3>
+              <p>
+                工具栏、缩放、导出与导航都在该出现的位置，不抢注意力。界面克制，是为了把认知负担留给真正重要的内容。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--metrics reveal" aria-label="产品指标">
+          <div class="metrics-band">
+            <div class="metric-card">
+              <strong>∞</strong>
+              <span>无限画布延展</span>
+              <p>不预设边界，适合从草图到系统图的完整思考过程。</p>
+            </div>
+            <div class="metric-card">
+              <strong>3s</strong>
+              <span>进入思考状态</span>
+              <p>减少界面噪音，让你打开后就能开始搭结构，而不是先学工具。</p>
+            </div>
+            <div class="metric-card">
+              <strong>100%</strong>
+              <span>围绕结构表达</span>
+              <p>从节点、连线到缩放反馈，所有元素都围绕“更快看清逻辑”。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--split reveal" id="workflow">
+          <div class="section__heading">
+            <p class="eyebrow">Workflow</p>
+            <h2>从模糊灵感，到可执行框架</h2>
+          </div>
+
+          <div class="workflow">
+            <div class="workflow-step">
+              <span>01</span>
+              <h3>先捕捉核心问题</h3>
+              <p>从一个中心节点开始，把问题、目标或主题放在最中间，让整张图围绕真正的思考中心展开。</p>
+            </div>
+            <div class="workflow-step">
+              <span>02</span>
+              <h3>扩展主分支与补充分支</h3>
+              <p>把关键维度拆出来，再把补充信息挂上去。你会看到信息如何从“堆积”转成“有层次”。</p>
+            </div>
+            <div class="workflow-step">
+              <span>03</span>
+              <h3>收束为输出材料</h3>
+              <p>当结构成形后，脑图就不只是草稿，而是课程大纲、产品方案、会议纪要与创作提纲的母版。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="scenes">
+          <div class="section__heading">
+            <p class="eyebrow">Use cases</p>
+            <h2>适合那些需要“想明白再开工”的工作</h2>
+          </div>
+
+          <div class="scene-grid">
+            <article class="scene-card">
+              <h3>产品经理</h3>
+              <p>拆需求、梳理信息架构、对齐版本范围，让讨论回到结构而不是碎片意见。</p>
+            </article>
+            <article class="scene-card">
+              <h3>内容创作者</h3>
+              <p>整理选题、脚本与知识框架，把零散素材长成可发布的内容树。</p>
+            </article>
+            <article class="scene-card">
+              <h3>研究与学习</h3>
+              <p>搭建知识地图、建立概念连接，把阅读笔记变成可复用的认知骨架。</p>
+            </article>
+            <article class="scene-card">
+              <h3>团队协作</h3>
+              <p>用一张图快速对齐方向、任务与依赖关系，比长文档更快进入同一上下文。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--band reveal">
+          <div class="quote-band">
+            <p>
+              “真正好的脑图工具，不是给你更多模板，而是让你在最短路径里看见结构。”
+            </p>
+            <span>Mindmap Studio 的设计原则</span>
+          </div>
+        </section>
+
+        <section class="section reveal" id="faq">
+          <div class="section__heading">
+            <p class="eyebrow">FAQ</p>
+            <h2>这些场景里，脑图到底怎么帮上忙？</h2>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3>开需求会时，脑图比文档更合适吗？</h3>
+              <p>
+                合适。会议刚开始时，问题往往还没有收敛成段落，而是主题、限制、依赖和待确认项同时冒出来。脑图更适合先把结构摊开，再逐步收束成需求说明。
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>做内容策划时，它能替代提纲工具吗？</h3>
+              <p>
+                可以，而且通常更快。选题、章节、案例、素材和转化路径天然就是树状关系，用脑图先长出结构，再进入正文写作，会比一开始就排线性提纲更顺。
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>学习和研究场景里，适合拿来整理知识吗？</h3>
+              <p>
+                适合。概念之间往往不是单点笔记，而是上下位、因果、并列和延伸关系。脑图能把这些连接直接可视化，复习时比翻零散笔记更容易回到整体结构。
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>如果是团队协作，它最大的价值是什么？</h3>
+              <p>
+                不是“大家一起画图”，而是更快进入同一个上下文。一个复杂议题先被拆成主分支和子问题之后，团队讨论会少很多重复解释，任务边界也更容易对齐。
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>它更适合前期发散，还是后期收束？</h3>
+              <p>
+                两者都适合，但最有价值的是把两段过程连起来。你可以先用它发散想法，再把有效分支沉淀为明确结构，不需要在“草稿工具”和“整理工具”之间来回切换。
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>什么类型的人最能感受到它的价值？</h3>
+              <p>
+                凡是需要先想明白再开工的人都会受益，比如产品经理、内容创作者、研究者、讲师、顾问以及需要做复杂汇报的人。它的核心价值不是装饰，而是把思路组织清楚。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="cta">
+          <div class="cta-card">
+            <div>
+              <p class="eyebrow">Ready to map your next idea?</p>
+              <h2>给每个想法一张更像纸、又更强的画布。</h2>
+              <p>
+                面向 macOS 打磨的 Mindmap Studio，把脑图工具从“能用”推进到“愿意一直用”。
+              </p>
+            </div>
+            <div class="cta-card__actions">
+              <a class="button button--primary" href="#hero">立即下载</a>
+              <a class="button button--ghost" href="#hero">返回顶部</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>&copy; 2024 Mindmap Studio. All rights reserved.</p>
+        <nav class="footer__nav" aria-label="底部导航">
+          <a href="#features">能力</a>
+          <a href="#faq">FAQ</a>
+          <a href="./privacy.html">隐私政策</a>
+        </nav>
+      </footer>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
