@@ -8,42 +8,54 @@ works:
     url: /mindmap-studio/
     tag: macOS
     description: 把想法摊开，再长成结构。无限画布、轻量操作，专为梳理思路与清晰表达而设计的脑图工具。
-    icon: M
+    icon_text: M
     icon_class: mindmap
+    has_icon: false
   - name: KeyAura
     url: /keyaura/
     tag: macOS
     description: 键盘热力图与使用统计工具。实时追踪按键分布，可视化你的输入习惯，数据完全本地存储。
-    icon: K
+    icon_text: K
     icon_class: keyaura
+    has_icon: true
+    icon_src: /keyaura/icon.png
   - name: HotMyKey
     url: /HotMyKey/
     tag: macOS
     description: 全局快捷键工具。录制按键、执行命令、快速启动应用与网页，用键盘自动化你的日常工作流。
-    icon: H
+    icon_text: H
     icon_class: hotmykey
+    has_icon: false
   - name: LauncherOS
     url: /launcheros/
     tag: macOS
     description: 分页宫格应用启动器。拖拽整理、文件夹管理、快捷键呼出与智能排序，重新整理你的 Mac 应用入口。
-    icon: L
+    icon_text: L
     icon_class: launcheros
+    has_icon: false
 ---
 
 <div class="works-grid">
   {% for work in page.works %}
   <a class="work-card" href="{{ work.url }}">
-    <div class="work-icon {{ work.icon_class }}">{{ work.icon }}</div>
-    <div class="work-body">
-      <div class="work-header">
-        <h3>{{ work.name }}</h3>
-        <span class="work-tag">{{ work.tag }}</span>
-      </div>
-      <p>{{ work.description }}</p>
+    <div class="work-icon-wrap">
+      {% if work.has_icon %}
+      <img class="work-icon-img" src="{{ work.icon_src }}" alt="{{ work.name }}" loading="lazy">
+      {% else %}
+      <div class="work-icon-letter {{ work.icon_class }}">{{ work.icon_text }}</div>
+      {% endif %}
     </div>
-    <div class="work-arrow">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </div>
+    <h3 class="work-name">{{ work.name }}</h3>
+    <span class="work-tag">{{ work.tag }}</span>
+    <p class="work-desc">{{ work.description }}</p>
   </a>
+  {% endfor %}
+
+  {% for i in (1..5) %}
+  <div class="work-card work-card--empty">
+    <div class="work-icon-wrap">
+      <div class="work-icon-letter work-icon--empty">+</div>
+    </div>
+  </div>
   {% endfor %}
 </div>
