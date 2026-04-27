@@ -1,123 +1,268 @@
 /**
- * Works list (horizontal cards)
+ * Works list - Magazine Editorial Redesign
  */
+
+.works-container {
+    margin-top: 48px;
+    position: relative;
+}
 
 .works-grid {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 24px;
+    gap: 80px;
 }
 
+// Featured Work Card - Asymmetric Magazine Layout
 .work-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 24px;
-    border: 1px solid #e5e5e5;
-    border-radius: 14px;
-    background: #fff;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    gap: 40px;
+    padding: 48px 0;
     text-decoration: none;
     color: inherit;
-    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: worksReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+    &:nth-child(4) { animation-delay: 0.4s; }
+    &:nth-child(5) { animation-delay: 0.5s; }
+
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            --card-index: #{$i};
+        }
+    }
+
+    // Horizontal rule between cards
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #e0e0e0 20%, #e0e0e0 80%, transparent);
+    }
+
+    &:first-child::before {
+        display: none;
+    }
 
     &:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-        border-color: #d0d0d0;
+        .work-content-wrap {
+            transform: translateX(8px);
+        }
+
+        .work-icon-wrap {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .work-title {
+            letter-spacing: 0.02em;
+        }
+
+        .work-arrow-line {
+            width: 60px;
+            opacity: 1;
+        }
+
+        .work-tag {
+            transform: translateX(4px);
+        }
+    }
+
+    @include media-query($on-palm) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 32px 0;
     }
 }
 
+@keyframes worksReveal {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.work-content-wrap {
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.work-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+    position: relative;
+    transition: letter-spacing 0.4s ease;
+}
+
+.work-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #f5f5f5;
+    color: #888;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.work-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 24px 0;
+    max-width: 520px;
+}
+
+// Arrow indicator - minimalist line style
+.work-arrow-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding-top: 8px;
+
+    @include media-query($on-palm) {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+.work-arrow {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.work-arrow-line {
+    position: absolute;
+    right: 0;
+    height: 2px;
+    width: 30px;
+    background: currentColor;
+    opacity: 0.4;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+    transform-origin: right center;
+}
+
+.work-arrow svg {
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover .work-arrow svg {
+    transform: translateX(4px);
+}
+
+// Icon Area - Oversized Magazine Style
 .work-icon-wrap {
-    flex-shrink: 0;
-    width: 56px;
-    height: 56px;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+    align-self: center;
+
+    @include media-query($on-palm) {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 .work-icon-img {
     width: 100%;
     height: 100%;
-    border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .work-icon-letter {
     width: 100%;
     height: 100%;
-    border-radius: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 3.5rem;
+    font-weight: 800;
     color: #fff;
-}
+    letter-spacing: -0.02em;
 
-.work-icon-letter.mindmap { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-.work-icon-letter.keyaura { background: linear-gradient(135deg, #f59e0b, #ef4444); }
-.work-icon-letter.hotmykey { background: linear-gradient(135deg, #10b981, #06b6d4); }
-.work-icon-letter.launcheros { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-.work-icon-letter.ckclock { background: linear-gradient(135deg, #1a1a1e, #4a4a52); }
-
-.work-body {
-    flex: 1;
-    min-width: 0;
-}
-
-.work-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 4px;
-    flex-wrap: wrap;
-
-    h3 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        margin: 0;
+    @include media-query($on-palm) {
+        font-size: 2.5rem;
     }
 }
 
-.work-tag {
-    font-size: .75rem;
-    font-weight: 500;
-    padding: 2px 8px;
-    border-radius: 6px;
-    background: #f5f5f5;
-    color: #666;
+// Per-product gradient backgrounds
+.work-icon-letter.mindmap { background: linear-gradient(145deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+.work-icon-letter.keyaura { background: linear-gradient(145deg, #2d1b33 0%, #371b58 50%, #5c3d7a 100%); }
+.work-icon-letter.hotmykey { background: linear-gradient(145deg, #1b2838 0%, #234567 50%, #345678 100%); }
+.work-icon-letter.launcheros { background: linear-gradient(145deg, #1a1a1e 0%, #2a2a32 50%, #3a3a42 100%); }
+.work-icon-letter.ckclock { background: linear-gradient(145deg, #1c1c1c 0%, #2a2a2a 50%, #333333 100%); }
+
+// Decorative index number
+.work-index {
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    font-size: 8rem;
+    font-weight: 800;
+    color: #f0f0f0;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.5;
+    z-index: 0;
 }
 
-.work-desc {
-    margin: 0;
-    color: #777;
-    font-size: .9rem;
-    line-height: 1.5;
-}
-
-.work-arrow {
-    flex-shrink: 0;
-    color: #bbb;
-    transition: color .2s ease, transform .2s ease;
-}
-
-.work-card:hover .work-arrow {
-    color: $brand-color;
-    transform: translateX(3px);
-}
-
+// Responsive adjustments
 @include media-query($on-palm) {
-    .work-card {
-        padding: 16px 18px;
-        gap: 14px;
+    .works-grid {
+        gap: 48px;
+    }
+
+    .work-title {
+        font-size: 1.6rem;
+    }
+
+    .work-desc {
+        font-size: 0.95rem;
+        max-width: 100%;
     }
 
     .work-icon-wrap {
-        width: 48px;
-        height: 48px;
+        align-self: flex-start;
     }
 
-    .work-icon-letter {
-        font-size: 1.1rem;
+    .work-index {
+        display: none;
     }
 }

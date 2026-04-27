@@ -45,25 +45,32 @@ works:
     icon_src: /ckclock.png
 ---
 
-<div class="works-grid">
+<div class="works-container">
   {% for work in page.works %}
+  {% assign index = forloop.index %}
   <a class="work-card" href="{{ work.url }}">
-    <div class="work-icon-wrap">
-      {% if work.has_icon %}
-      <img class="work-icon-img" src="{{ work.icon_src }}" alt="{{ work.name }}" loading="lazy">
-      {% else %}
-      <div class="work-icon-letter {{ work.icon_class }}">{{ work.icon_text }}</div>
-      {% endif %}
-    </div>
-    <div class="work-body">
+    <div class="work-content-wrap">
       <div class="work-header">
-        <h3>{{ work.name }}</h3>
+        <h2 class="work-title">{{ work.name }}</h2>
         <span class="work-tag">{{ work.tag }}</span>
       </div>
       <p class="work-desc">{{ work.description }}</p>
     </div>
-    <div class="work-arrow">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    <div class="work-arrow-wrap">
+      <div class="work-icon-wrap">
+        {% if work.has_icon %}
+        <img class="work-icon-img" src="{{ work.icon_src }}" alt="{{ work.name }}" loading="lazy">
+        {% else %}
+        <div class="work-icon-letter {{ work.icon_class }}">{{ work.icon_text }}</div>
+        {% endif %}
+      </div>
+      <div class="work-arrow">
+        <div class="work-arrow-line"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </div>
     </div>
   </a>
   {% endfor %}
