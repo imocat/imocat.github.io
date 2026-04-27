@@ -1,0 +1,49 @@
+---
+layout: page
+title: Works
+subtitle: macOS 效率工具
+permalink: /works/
+works:
+  - name: Mindmap Studio
+    url: /mindmap-studio/
+    tag: macOS
+    description: 把想法摊开，再长成结构。无限画布、轻量操作，专为梳理思路与清晰表达而设计的脑图工具。
+    icon: M
+    icon_class: mindmap
+  - name: KeyAura
+    url: /keyaura/
+    tag: macOS
+    description: 键盘热力图与使用统计工具。实时追踪按键分布，可视化你的输入习惯，数据完全本地存储。
+    icon: K
+    icon_class: keyaura
+  - name: HotMyKey
+    url: /HotMyKey/
+    tag: macOS
+    description: 全局快捷键工具。录制按键、执行命令、快速启动应用与网页，用键盘自动化你的日常工作流。
+    icon: H
+    icon_class: hotmykey
+  - name: LauncherOS
+    url: /launcheros/
+    tag: macOS
+    description: 分页宫格应用启动器。拖拽整理、文件夹管理、快捷键呼出与智能排序，重新整理你的 Mac 应用入口。
+    icon: L
+    icon_class: launcheros
+---
+
+<div class="works-grid">
+  {% for work in page.works %}
+  <a class="work-card" href="{{ work.url }}">
+    <div class="work-icon {{ work.icon_class }}">{{ work.icon }}</div>
+    <div class="work-body">
+      <div class="work-header">
+        <h3>{{ work.name }}</h3>
+        <span class="work-tag">{{ work.tag }}</span>
+      </div>
+      <p>{{ work.description }}</p>
+    </div>
+    <div class="work-arrow">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </div>
+  </a>
+  {% endfor %}
+</div>
