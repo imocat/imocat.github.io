@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TapSpeak Privacy Policy</title>
+  <meta name="description" content="TapSpeak Privacy Policy">
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f6f7f9;
+      --surface: #ffffff;
+      --text: #16181d;
+      --muted: #5f6875;
+      --border: #e2e6ec;
+      --accent: #1769e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.72;
+    }
+
+    main {
+      width: min(880px, calc(100% - 32px));
+      margin: 48px auto;
+      padding: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+      margin: 40px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    p,
+    ul {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .meta {
+      margin-bottom: 28px;
+      color: var(--muted);
+    }
+
+    .contact {
+      margin-top: 16px;
+      padding: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 28px 20px 40px;
+        border-width: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>TapSpeak Privacy Policy</h1>
+    <p class="meta">Effective Date: 2026-06-30</p>
+
+    <p>This Privacy Policy applies to TapSpeak, also localized as 开口译.</p>
+
+    <h2>Data We Do Not Collect</h2>
+    <p>TapSpeak does not require an account, does not include advertising SDKs, does not track users across apps or websites, and does not send your translation text, recordings, conversation history, or local model files to a developer server.</p>
+
+    <h2>Data Processed on Device</h2>
+    <p>TapSpeak processes the following data on device to provide translation features:</p>
+    <ul>
+      <li>Microphone audio: used for recording and conversion to text through iOS speech recognition.</li>
+      <li>Recognized text and translations: used to create the current conversation and show translation results.</li>
+      <li>Conversation history: saved locally in ordinary mode so you can restore sessions later.</li>
+      <li>Private sessions: Privacy Mode does not save history and keeps only the latest visible exchange.</li>
+      <li>Local model files: downloaded or imported GGUF model files are stored in the app's Application Support directory.</li>
+      <li>App settings: speech speed, max recording length, voice selection, model selection, and Privacy Mode state.</li>
+    </ul>
+    <p>You can delete the local model in the app, clear the current conversation, or remove local app data by uninstalling the app.</p>
+
+    <h2>System Permissions</h2>
+    <p>TapSpeak requests these system permissions:</p>
+    <ul>
+      <li>Microphone: to record speech.</li>
+      <li>Speech Recognition: to convert speech into text.</li>
+      <li>File access: only when you choose a GGUF model through the iOS file picker.</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>TapSpeak can download public model files from Hugging Face. During model download, your device connects directly to the model hosting service, which may process connection logs, IP address, and download request information. TapSpeak does not upload your conversation content to Hugging Face.</p>
+    <p>Speech recognition is provided by the iOS Speech framework. Depending on the device, language, and system state, speech recognition processing may be handled by Apple system services. TapSpeak does not send recordings or recognized text to a developer server.</p>
+
+    <h2>Retention</h2>
+    <p>Conversation history in ordinary mode is stored locally until you clear it, delete app data, or uninstall the app. Privacy Mode does not save history.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>TapSpeak is not directed to children and does not knowingly collect personal information from children.</p>
+
+    <h2>Changes</h2>
+    <p>If future versions add accounts, cloud sync, analytics, crash reporting, subscriptions, or other network features, this policy should be updated and the App Store privacy details should be reviewed again.</p>
+
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>For privacy questions, contact: <a href="mailto:hello@txxy.in">hello@txxy.in</a></p>
+      <p>Developer: hello@txxy.in</p>
+    </div>
+  </main>
+</body>
+</html>

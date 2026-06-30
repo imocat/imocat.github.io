@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>开口译隐私政策</title>
+  <meta name="description" content="开口译 TapSpeak 隐私政策">
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f6f7f9;
+      --surface: #ffffff;
+      --text: #16181d;
+      --muted: #5f6875;
+      --border: #e2e6ec;
+      --accent: #1769e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.72;
+    }
+
+    main {
+      width: min(880px, calc(100% - 32px));
+      margin: 48px auto;
+      padding: 48px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.25;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    h2 {
+      margin: 40px 0 12px;
+      font-size: 1.35rem;
+    }
+
+    p,
+    ul {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+    }
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .meta {
+      margin-bottom: 28px;
+      color: var(--muted);
+    }
+
+    .contact {
+      margin-top: 16px;
+      padding: 20px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 640px) {
+      main {
+        width: 100%;
+        margin: 0;
+        padding: 28px 20px 40px;
+        border-width: 0;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>开口译隐私政策</h1>
+    <p class="meta">生效日期：2026-06-30</p>
+
+    <p>本隐私政策适用于开口译（英文名：TapSpeak）。</p>
+
+    <h2>我们不收集的数据</h2>
+    <p>开口译不要求注册账号，不接入广告 SDK，不进行跨 App 或跨网站跟踪，也不会将你的翻译文本、录音内容、会话历史或本地模型文件发送给开发者服务器。</p>
+
+    <h2>设备上的数据处理</h2>
+    <p>开口译会在设备上处理以下内容，用于提供翻译体验：</p>
+    <ul>
+      <li>麦克风音频：用于录音并交给 iOS 语音识别能力转换为文字。</li>
+      <li>识别文本和译文：用于生成当前对话并展示翻译结果。</li>
+      <li>会话历史：普通模式下保存在设备本地，方便你稍后恢复。</li>
+      <li>隐私模式会话：不会写入历史记录，只保留当前界面的最近一组对话。</li>
+      <li>本地模型文件：下载或导入的 GGUF 模型保存在设备的应用支持目录中。</li>
+      <li>应用设置：例如语音速度、录音时长、发音人、模型选择和隐私模式开关。</li>
+    </ul>
+    <p>你可以在应用内删除本地模型、清空当前会话，或通过系统卸载应用删除相关本地数据。</p>
+
+    <h2>系统权限</h2>
+    <p>开口译会请求以下系统权限：</p>
+    <ul>
+      <li>麦克风权限：用于录音。</li>
+      <li>语音识别权限：用于将语音转换为文字。</li>
+      <li>文件访问：当你主动选择导入 GGUF 模型时，通过 iOS 文件选择器访问你选中的文件。</li>
+    </ul>
+
+    <h2>第三方服务</h2>
+    <p>开口译可从 Hugging Face 下载公开模型文件。下载模型时，你的设备会直接连接模型托管服务，相关服务可能会处理连接日志、IP 地址和下载请求信息。开口译不会把你的对话内容上传到 Hugging Face。</p>
+    <p>语音识别由 iOS Speech framework 提供。根据设备、语言和系统状态，语音识别处理方式可能由 Apple 的系统服务决定。开口译不会把录音或识别文本发送给开发者服务器。</p>
+
+    <h2>数据保留</h2>
+    <p>普通模式下的会话历史保存在设备本地，直到你在应用中清空、删除应用数据或卸载应用。隐私模式不会保存历史记录。</p>
+
+    <h2>儿童隐私</h2>
+    <p>开口译不是面向儿童的服务，也不会有意收集儿童个人信息。</p>
+
+    <h2>政策更新</h2>
+    <p>如果未来加入账号、云同步、分析、崩溃上报、订阅或其他联网功能，本政策会相应更新，并在必要时调整 App Store 隐私标签。</p>
+
+    <h2>联系我们</h2>
+    <div class="contact">
+      <p>如有隐私相关问题，请联系：<a href="mailto:hello@txxy.in">hello@txxy.in</a></p>
+      <p>开发者：hello@txxy.in</p>
+    </div>
+  </main>
+</body>
+</html>
