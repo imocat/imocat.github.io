@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Between Frames: Revisit your camera roll, a few photos at a time</title>
+<meta name="description" content="Between Frames is a calm iPhone app for revisiting your photos and videos in small groups. Swipe to keep, mark what you don't need, and take one last look before iOS deletes anything. Nothing leaves your iPhone.">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Between Frames">
+<meta property="og:title" content="Between Frames: Keep the frame. Let the rest go.">
+<meta property="og:description" content="Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look.">
+<meta property="og:image" content="https://txxy.in/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!--
+  Between Frames landing page · direction 2 "Darkroom" (see design-demos/direction-approved.md).
+  Reference: Halide (halide.cam) — pure black, one accent, tracked uppercase labels, the real UI as hero.
+  Accent #E8A07E is the sun on the app icon (a darkroom safelight); Ink #F2F1EC and Secondary come
+  from DESIGN.md. Danger red appears only where the page talks about marking for deletion.
+  Form from content: a film strip where one frame lifts out (kept) and one drops away (let go).
+  No prices on the page: they come from the App Store (AGENTS.md).
+-->
+<style>
+:root{
+  --bg:#000; --raise:#0E0E0E; --ink:#F2F1EC; --body:#C9C9C4; --sec:#A3A39F;
+  --line:rgba(255,255,255,.1); --sun:#E8A07E; --danger:#FF5B4F; --green:#3F6E5A;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:12px;z-index:50;background:var(--ink);color:#111;padding:10px 16px;border-radius:999px}
+.skip:focus{left:12px}
+.label{font-weight:600;font-size:12px;line-height:1;letter-spacing:.18em;text-transform:uppercase;color:var(--sun)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;background:var(--ink);color:#111211;font-weight:600;text-decoration:none;border-radius:999px;padding:0 26px;font-size:16px;transition:opacity .2s}
+.btn:hover{opacity:.86}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px rgba(255,255,255,.26)}
+.btn.small{min-height:40px;padding:0 18px;font-size:14px}
+
+/* nav */
+nav.top{position:fixed;inset:0 0 auto;z-index:20;padding-top:env(safe-area-inset-top);transition:background .3s,box-shadow .3s}
+nav.top.solid{background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 1px 0 var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:12px;height:68px}
+nav.top .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600}
+nav.top .brand img{width:30px;height:30px;border-radius:8px}
+nav.top .links{margin-left:auto;display:flex;gap:30px;font-size:14px;color:var(--sec)}
+nav.top .links a{text-decoration:none}nav.top .links a:hover{color:var(--ink)}
+nav.top .btn{margin-left:28px}
+
+/* hero */
+header.hero{position:relative;overflow:clip;padding:164px 0 0;text-align:center}
+header.hero h1{font-size:clamp(46px,7.6vw,116px);line-height:.95;letter-spacing:-.045em;font-weight:700;margin:24px auto 26px}
+header.hero h1 em{font-style:normal;color:var(--sun)}
+header.hero .lead{font-size:clamp(18px,1.6vw,21px);color:var(--body);max-width:34ch;margin:0 auto;text-wrap:pretty}
+header.hero .ctas{display:flex;gap:14px;justify-content:center;margin-top:38px;flex-wrap:wrap}
+header.hero .meta{margin-top:18px;font-size:14px;color:var(--sec)}
+
+.strip{position:relative;height:440px;margin-top:84px}
+.film{position:absolute;left:-60px;right:-60px;top:84px;height:276px;background:#101010;display:flex;gap:16px;align-items:center;justify-content:center;padding:0 16px;
+  -webkit-mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent);mask:linear-gradient(90deg,transparent,#000 14%,#000 86%,transparent)}
+.film::before,.film::after{content:"";position:absolute;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,transparent 0 14px,#262626 14px 26px)}
+.film::before{top:8px}.film::after{bottom:8px}
+.frame{flex:none;width:300px;height:212px;border-radius:5px;overflow:hidden;background:#1a1a1a}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame.empty{background:transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.lift{position:absolute;left:50%;top:0;width:316px;height:224px;margin-left:-474px;border-radius:18px;overflow:hidden;z-index:2;
+  box-shadow:0 44px 90px rgba(0,0,0,.85),0 0 0 1px rgba(255,255,255,.14);transform:translateY(-6px) rotate(-3deg);animation:lift 7s ease-in-out infinite alternate}
+.drop{position:absolute;left:50%;top:286px;width:300px;height:212px;margin-left:158px;border-radius:5px;overflow:hidden;z-index:1;
+  transform:rotate(9deg) translateY(40px) scale(.84);opacity:.3;filter:grayscale(.5);animation:drop 7s ease-in-out infinite alternate}
+.lift img,.drop img{width:100%;height:100%;object-fit:cover}
+.cap{position:absolute;z-index:3;font-size:13px;color:var(--sec);white-space:nowrap}
+.cap b{color:var(--ink);font-weight:600;margin-right:6px}
+.cap.k{left:50%;margin-left:-474px;top:236px}
+.cap.d{left:50%;margin-left:178px;top:256px}
+.cap.d b{color:var(--danger)}
+@keyframes lift{to{transform:translateY(-22px) rotate(-1.5deg)}}
+@keyframes drop{to{transform:rotate(11deg) translateY(64px) scale(.82);opacity:.2}}
+
+/* feature rows */
+section.feat{display:grid;grid-template-columns:1fr 1fr;gap:88px;align-items:center;padding-top:160px;scroll-margin-top:80px}
+section.feat.flip .copy{order:2}
+.copy h2,.h2{font-size:clamp(36px,4.3vw,62px);line-height:1;letter-spacing:-.035em;margin:18px 0 22px;text-wrap:balance}
+.copy p{color:var(--body);font-size:18px;max-width:40ch;text-wrap:pretty}
+.moves{list-style:none;margin-top:30px;display:grid;gap:0;max-width:44ch}
+.moves li{display:grid;grid-template-columns:88px 1fr;gap:16px;font-size:16px;color:#DADAD5;border-top:1px solid var(--line);padding:15px 0}
+.moves li:last-child{border-bottom:1px solid var(--line)}
+.moves li span{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sec);padding-top:3px}
+.moves li span.up{color:var(--danger)}
+.device{justify-self:center;width:330px;border-radius:54px;padding:11px;background:linear-gradient(150deg,#2c2c2c,#0b0b0b 60%);box-shadow:0 0 0 1px rgba(255,255,255,.16),0 70px 140px -40px rgba(232,160,126,.16)}
+.device img{width:100%;height:auto;border-radius:44px;aspect-ratio:1206/2622;object-fit:cover}
+.pair{position:relative;justify-self:center;width:460px;height:660px}
+.pair .device{position:absolute;width:290px}
+.pair .device:first-child{left:0;top:0}
+.pair .device:last-child{right:0;top:76px}
+
+/* privacy band */
+.privacy{margin-top:170px;padding:84px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;scroll-margin-top:80px}
+.privacy .h2{max-width:14ch;margin-left:auto;margin-right:auto}
+.privacy p{color:var(--body);max-width:48ch;margin:0 auto;font-size:18px}
+.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px;list-style:none}
+.facts li{border-radius:999px;padding:10px 18px;font-size:15px;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px var(--line)}
+.privacy a.more{display:inline-block;margin-top:28px;font-size:15px;color:var(--sun);text-decoration:none}
+.privacy a.more:hover{text-decoration:underline}
+
+/* principles */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);margin-top:120px}
+.grid4 div{padding:0 28px 8px;border-left:1px solid var(--line)}
+.grid4 div:first-child{padding-left:0;border-left:0}
+.grid4 h3{font-size:20px;letter-spacing:-.01em;margin:16px 0 8px}
+.grid4 p{color:var(--sec);font-size:15px}
+
+/* pro */
+.pro{margin-top:170px;border-radius:36px;padding:72px;background:radial-gradient(80% 120% at 100% 0%,rgba(232,160,126,.15),transparent 55%),var(--raise);box-shadow:inset 0 0 0 1px var(--line);display:grid;grid-template-columns:1.1fr .9fr;gap:56px;scroll-margin-top:80px}
+.pro .h2{font-size:clamp(34px,3.8vw,54px)}
+.pro p{color:var(--body)}
+.pro .fine{margin-top:16px;font-size:14px;color:var(--sec)}
+.tiers{display:grid;gap:12px;align-content:start}
+.tier{display:flex;justify-content:space-between;align-items:center;gap:16px;border-radius:20px;padding:20px 22px;background:rgba(255,255,255,.05);box-shadow:inset 0 0 0 1px var(--line)}
+.tier b{display:block;font-size:17px}.tier small{color:var(--sec);font-size:14px}
+.tier em{font-style:normal;font-size:13px;color:var(--sun);white-space:nowrap}
+.tiers .note{color:var(--sec);font-size:13px;padding-left:4px}
+
+/* faq */
+.faq{margin-top:170px;display:grid;grid-template-columns:1fr 2fr;gap:56px;scroll-margin-top:80px}
+.faq .h2{font-size:clamp(34px,3.8vw,54px);margin-bottom:0}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;font-size:19px;font-weight:600;display:flex;justify-content:space-between;gap:20px;padding:22px 0}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--sun);font-weight:400;font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--sec);margin:-6px 0 22px;max-width:60ch}
+
+/* closing */
+.end{text-align:center;padding:180px 0 130px;scroll-margin-top:40px}
+.end img{width:104px;height:104px;border-radius:24px;margin:0 auto;box-shadow:0 24px 70px rgba(63,110,90,.45)}
+.end h2{font-size:clamp(44px,6vw,88px);letter-spacing:-.045em;line-height:.98;margin:30px auto 18px}
+.end p{color:var(--sec);margin-bottom:32px}
+footer{border-top:1px solid var(--line);padding:30px 0 calc(40px + env(safe-area-inset-bottom));font-size:14px;color:var(--sec)}
+footer .wrap{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+footer a{text-decoration:none}footer a:hover{color:var(--ink)}
+footer span{margin-left:auto}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .lift,.drop{animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+}
+
+/* responsive */
+@media (max-width:1060px){
+  .lift{margin-left:-380px}.cap.k{margin-left:-380px}.drop{margin-left:90px}.cap.d{margin-left:110px}
+  .grid4{grid-template-columns:1fr 1fr;row-gap:44px}.grid4 div:nth-child(3){padding-left:0;border-left:0}
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  nav.top .wrap{height:60px}nav.top .links{display:none}nav.top .btn{margin-left:auto}
+  header.hero{padding-top:124px}
+  .strip{height:330px;margin-top:56px}
+  .film{top:70px;height:196px}.frame{width:206px;height:146px}
+  .lift{width:230px;height:163px;margin-left:-115px;top:4px}.drop{display:none}
+  .cap.k{margin-left:-115px;top:186px}.cap.d{display:none}
+  section.feat{grid-template-columns:1fr;gap:48px;padding-top:112px}section.feat.flip .copy{order:0}
+  .device{width:272px;border-radius:46px;padding:9px}.device img{border-radius:38px}
+  .pair{width:100%;max-width:360px;height:520px}.pair .device{width:214px}.pair .device:last-child{top:64px}
+  .privacy{margin-top:112px;padding:64px 0}
+  .grid4{grid-template-columns:1fr;margin-top:80px;row-gap:0}
+  .grid4 div,.grid4 div:nth-child(3){padding:26px 0;border-left:0;border-top:1px solid var(--line)}
+  .pro{grid-template-columns:1fr;gap:32px;padding:40px 24px;margin-top:112px;border-radius:28px}
+  .faq{grid-template-columns:1fr;gap:8px;margin-top:112px}
+  summary{font-size:17px}
+  .end{padding:130px 0 100px}
+  footer span{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="top" id="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="30" height="30">Between Frames</a>
+    <div class="links"><a href="#how">How it works</a><a href="#privacy">Privacy</a><a href="#pro">Pro</a><a href="#faq">FAQ</a></div>
+    <a class="btn small" href="#download">Download</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="label">For iPhone · Photos &amp; videos</div>
+    <h1>Keep the frame.<br><em>Let the rest go.</em></h1>
+    <p class="lead">Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look.</p>
+    <div class="ctas">
+      <a class="btn" href="#download">Download on the App Store</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+    <p class="meta">Free to start · iOS 16 or later</p>
+  </div>
+  <div class="strip" aria-hidden="true">
+    <div class="film">
+      <div class="frame"><img src="assets/photos/hike.jpg" alt=""></div>
+      <div class="frame"><img src="assets/photos/friends.jpg" alt=""></div>
+      <div class="frame empty"></div>
+      <div class="frame"><img src="assets/photos/kitchen.jpg" alt=""></div>
+      <div class="frame empty"></div>
+      <div class="frame"><img src="assets/photos/mountain.jpg" alt=""></div>
+    </div>
+    <div class="lift"><img src="assets/photos/sunset.jpg" alt=""></div>
+    <div class="drop"><img src="assets/photos/street.jpg" alt=""></div>
+    <div class="cap k"><b>Kept</b>swipe left</div>
+    <div class="cap d"><b>Let go</b>swipe up</div>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <section class="feat" id="how">
+    <div class="copy rv">
+      <div class="label">01 · Review</div>
+      <h2>One photo. One decision.</h2>
+      <p>Photos fill the screen, true to their shape. Swipe and move on. Anything you don't mark is kept.</p>
+      <ul class="moves">
+        <li><span>Left</span>Keep it and see the next one.</li>
+        <li><span class="up">Up</span>Mark it for deletion. It drops into the Dynamic Island.</li>
+        <li><span>Undo</span>Changed your mind? It flies right back.</li>
+      </ul>
+    </div>
+    <div class="device rv"><img src="assets/screens/review.jpg" alt="Photo review in Between Frames: a single photo with progress at the top and Details, Favorite and Undo at the bottom" loading="lazy" width="603" height="1311"></div>
+  </section>
+
+  <section class="feat flip">
+    <div class="copy rv">
+      <div class="label">02 · One last look</div>
+      <h2>Nothing goes without a second glance.</h2>
+      <p>At the end of every group, see everything you marked. Tap anything you're unsure about to keep it. Then iOS asks you once to confirm.</p>
+      <ul class="moves">
+        <li><span>Safe</span>Deleted items wait in Recently Deleted, where iOS keeps them for up to 30 days.</li>
+        <li><span>Honest</span>Storage savings are counted only after iOS confirms.</li>
+      </ul>
+    </div>
+    <div class="pair rv">
+      <div class="device"><img src="assets/screens/lastlook.jpg" alt="One last look: the photos marked for deletion and a Delete 1 item button" loading="lazy" width="603" height="1311"></div>
+      <div class="device"><img src="assets/screens/done.jpg" alt="Group done: reviewed, kept and deleted counts and a Back to Today button" loading="lazy" width="603" height="1311"></div>
+    </div>
+  </section>
+
+  <section class="feat">
+    <div class="copy rv">
+      <div class="label">03 · Videos</div>
+      <h2>Your videos get the same calm.</h2>
+      <p>A full-screen vertical feed that plays as you go. Swipe up for the next one. Favorite, mute, mark or undo from the side.</p>
+    </div>
+    <div class="device rv"><img src="assets/screens/video.jpg" alt="Full-screen video review with Favorite, Pause, Sound, Delete and Undo controls" loading="lazy" width="603" height="1311"></div>
+  </section>
+
+  <section class="feat flip">
+    <div class="copy rv">
+      <div class="label">04 · Today</div>
+      <h2>Start wherever feels right.</h2>
+      <p>Your next group of photos is waiting on Today. Or jump straight to your videos, your screenshots, a single day, or one album.</p>
+    </div>
+    <div class="device rv"><img src="assets/screens/today.jpg" alt="The Today screen: the next group of photos with a Start button, plus Videos, Screenshots, By date and Albums" loading="lazy" width="603" height="1311"></div>
+  </section>
+
+  <div class="grid4 rv">
+    <div><div class="label">Groups</div><h3>Small enough to finish</h3><p>Fifteen items, about four minutes. Stop anytime and pick up exactly where you left off.</p></div>
+    <div><div class="label">Memory</div><h3>Done stays done</h3><p>Reviewed items don't come back on their own after a restart or a library refresh.</p></div>
+    <div><div class="label">Calm</div><h3>No scary counters</h3><p>You only see the group in front of you, never a mountain of everything left.</p></div>
+    <div><div class="label">Progress</div><h3>See what you've done</h3><p>Items reviewed and potential storage savings, split by photos and videos.</p></div>
+  </div>
+
+  <section class="privacy rv" id="privacy">
+    <div class="label">Privacy</div>
+    <h2 class="h2">Nothing leaves your iPhone.</h2>
+    <p>Your photos, videos and review progress are processed on your device. Between Frames never uploads them.</p>
+    <ul class="facts"><li>No account</li><li>No ads</li><li>No analytics</li><li>No tracking</li></ul>
+    <a class="more" href="privacy.html">Read the Privacy Policy →</a>
+  </section>
+
+  <section class="pro rv" id="pro">
+    <div>
+      <div class="label">Free &amp; Pro</div>
+      <h2 class="h2">Three groups a day, free.</h2>
+      <p>Start up to three new groups every day, photos and videos combined, with up to 15 items each. Continuing a group never counts. Library, details and Progress are always free.</p>
+      <p style="margin-top:14px">Go Pro for unlimited groups and sessions of 15, 30, 45, 60 or 100 items.</p>
+      <p class="fine">Prices are shown in the App Store in your currency. Manage or cancel anytime in iOS Settings.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier"><div><b>Monthly</b><small>Billed monthly</small></div></div>
+      <div class="tier"><div><b>Yearly</b><small>Billed yearly</small></div><em>3-day free trial*</em></div>
+      <div class="tier"><div><b>Lifetime</b><small>One-time purchase. No renewal.</small></div></div>
+      <p class="note">*For eligible new subscribers.</p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="rv"><div class="label">FAQ</div><h2 class="h2">Good questions.</h2></div>
+    <div class="rv">
+      <details open><summary>Where do deleted photos go?</summary><p>To Recently Deleted in the Photos app. iOS keeps them there for up to 30 days, so you can still recover them.</p></details>
+      <details><summary>Does it work with iCloud Photos?</summary><p>Yes. When you delete items, the change syncs to your other devices that use the same iCloud Photos library.</p></details>
+      <details><summary>Does Between Frames upload my photos?</summary><p>No. Your photos and videos are processed on your iPhone and are never sent to us.</p></details>
+      <details><summary>What if I only allow access to selected photos?</summary><p>Between Frames works with the photos you choose. You can change access anytime in Progress or in iOS Settings.</p></details>
+      <details><summary>Can I start over?</summary><p>Yes. Reset review progress for All, Photos or Videos in Progress. Your deletion history and today's group count are kept.</p></details>
+      <details><summary>How do I cancel Pro?</summary><p>Subscriptions are managed by Apple. Open iOS Settings, tap your name, then Subscriptions. Lifetime is a one-time purchase and never renews.</p></details>
+    </div>
+  </section>
+
+  <section class="end rv" id="download">
+    <img src="assets/icon.png" alt="Between Frames app icon" width="104" height="104">
+    <h2>Start with fifteen.</h2>
+    <p>Free on the App Store for iPhone.</p>
+    <a class="btn" href="#download">Download on the App Store</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:hello@txxy.in">Contact</a>
+    <span>© 2026 Between Frames</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('solid',scrollY>24);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
