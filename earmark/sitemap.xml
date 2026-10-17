@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://earmark.txxy.in/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/privacy.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/privacy.html" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/terms.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/terms.html" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/support.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/support.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/support.html" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/zh/</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/zh/privacy.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/privacy.html" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/zh/terms.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/terms.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/terms.html" />
+  </url>
+  <url>
+    <loc>https://earmark.txxy.in/zh/support.html</loc>
+    <lastmod>2026-10-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://earmark.txxy.in/support.html" />
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://earmark.txxy.in/zh/support.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://earmark.txxy.in/support.html" />
+  </url>
+</urlset>
