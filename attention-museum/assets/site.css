@@ -126,8 +126,9 @@ section { padding: clamp(5rem, 12vh, 8rem) clamp(1.2rem, 5vw, 3rem); }
 .eyebrow { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--accent-text); text-transform: uppercase; }
 h2 { text-wrap: balance; margin: 0.5rem 0 0; font-weight: 400; font-size: clamp(1.6rem, 3.8vw, 2.2rem); letter-spacing: 0.08em; color: var(--ink-strong); line-height: 1.5; }
 .section-head p { max-width: var(--measure); color: var(--secondary); margin: 1rem 0 0; }
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
+.reveal { opacity: 1; transform: none; transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.js .reveal { opacity: 0; transform: translateY(14px); }
+.js .reveal.in { opacity: 1; transform: none; }
 
 /* 体验：步骤 + 一分钟试看 */
 .ritual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); max-width: 60rem; margin: 0 auto; align-items: center; }
@@ -252,3 +253,47 @@ footer p { margin: 0; }
   body::before, .topbar, .doc-nav { display: none; }
   .doc { padding-top: 0; }
 }
+
+/* 多语言导航与字体：静态页面不依赖脚本翻译正文。 */
+:lang(zh-Hant) { --serif: "Iowan Old Style", "Songti TC", "Noto Serif TC", Georgia, serif; }
+:lang(ja) { --serif: "Iowan Old Style", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif; }
+:lang(ko) { --serif: "Iowan Old Style", "Batang", "Noto Serif KR", serif; }
+.brand { min-width: 0; }
+.brand img { flex-shrink: 0; }
+.brand span { overflow-wrap: anywhere; }
+.topbar { gap: 1rem; }
+.topbar nav { flex-wrap: wrap; }
+.language-switch { flex-shrink: 0; }
+.language-switch > label {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
+}
+.language-switch select {
+  display: none; width: 9.5rem; max-width: 100%; min-height: 44px;
+  font: inherit; font-size: 0.82rem; color: var(--ink);
+  background: rgba(251, 250, 246, 0.88); border: 0.75px solid var(--hairline);
+  border-radius: 5px; padding: 0.4rem 0.5rem;
+}
+.interactive .language-switch select { display: block; }
+.language-links { max-width: 22rem; justify-content: flex-end; font-size: 0.75rem; }
+.hero h1 { text-wrap: balance; overflow-wrap: break-word; }
+.doc :is(p, li, td, th), .fineprint { overflow-wrap: anywhere; hyphens: auto; }
+.doc h1 { overflow-wrap: anywhere; hyphens: auto; text-wrap: balance; }
+.prices { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.prices :is(span, em) { overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .topbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.5rem 0.75rem; }
+  .topbar > nav { grid-column: 1 / -1; grid-row: 2; justify-content: center; }
+  .language-switch { grid-column: 2; grid-row: 1; max-width: 8.5rem; }
+  .hero { padding-top: 9rem; }
+  .language-links { display: grid !important; grid-template-columns: 1fr 1fr; gap: 0.25rem 0.5rem !important; }
+}
+@media print { .language-switch { display: none; } }
+html:not(.interactive) .topbar { position: relative; }
+html:not(.interactive) .doc { padding-top: 2rem; }
+html:not(.interactive) .hero { padding-top: 3rem; }
+.demo .cta:disabled { opacity: 0.65; cursor: default; }
+@media (max-width: 360px) {
+  .doc h1 { font-size: 1.6rem; letter-spacing: 0.01em; }
+}
+html:lang(ja) .hero h1 { word-break: keep-all; overflow-wrap: normal; line-break: strict; }
