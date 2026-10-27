@@ -1,0 +1,254 @@
+/* 专注艺术馆 · 白色砂岩墙面，与 App 的 GalleryPalette 保持一致 */
+:root {
+  --wall: #f1efe8;
+  --wall-deep: #e7e4da;
+  --ink: #454642;
+  --ink-strong: #2e2f2b;
+  --secondary: #66665f;
+  --accent: #9a8a6a;
+  --accent-text: #76674a;
+  --plaque: #1d1e1b;
+  --sheet: #fbfaf6;
+  --hairline: rgba(69, 70, 66, 0.16);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti SC", "STSong", "Noto Serif SC",
+    "Source Han Serif SC", "Noto Serif CJK SC", "SimSun", Georgia, serif;
+  --measure: 34rem;
+  --ease: cubic-bezier(0.22, 0.7, 0.18, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  background: var(--wall) url("wall.webp") repeat;
+  background-size: 900px;
+  -webkit-font-smoothing: antialiased;
+}
+/* 柔和的顶光：墙面上方略亮、下方略暗，不随滚动变化 */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(120% 70% at 50% -10%, rgba(255, 255, 255, 0.55), transparent 60%),
+    linear-gradient(to bottom, transparent 60%, rgba(120, 112, 92, 0.08));
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration-color: var(--hairline); text-underline-offset: 0.3em; }
+a:hover { text-decoration-color: var(--accent); }
+:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; background: var(--sheet); padding: 0.4rem 0.8rem; z-index: 10; }
+
+/* 顶部 */
+.topbar {
+  position: absolute; top: 0; left: 0; right: 0; z-index: 5;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.4rem clamp(1.2rem, 4vw, 3rem);
+  font-size: 0.82rem; color: var(--secondary);
+}
+.brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); }
+.brand img { width: 28px; height: 28px; border-radius: 7px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+.topbar nav { display: flex; gap: clamp(0.9rem, 3vw, 2rem); }
+.topbar nav a { text-decoration: none; }
+.topbar nav a:hover { color: var(--ink); }
+
+/* 画框、挂钩与编号牌 */
+.exhibit { position: relative; display: inline-block; }
+.exhibit .hook {
+  position: absolute; left: 50%; top: -15px; width: 11px; height: 15px; transform: translateX(-50%);
+  border-radius: 3px 3px 2px 2px;
+  background: linear-gradient(#5b5a55, #2f2f2c);
+  box-shadow: 0.6px 1.6px 1.4px rgba(0, 0, 0, 0.25);
+}
+.exhibit .hook::after {
+  content: ""; position: absolute; left: 3px; top: 4px; width: 5px; height: 5px; border-radius: 50%;
+  background: #1b1b19; box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.exhibit .art {
+  position: relative; z-index: 1;
+  filter: drop-shadow(0 1.5px 1.2px rgba(40, 34, 22, 0.32)) drop-shadow(4px 14px 16px rgba(64, 58, 44, 0.20));
+}
+.plaque {
+  display: inline-block; margin-top: 14px;
+  min-width: 76px; padding: 3px 9px;
+  font-size: 10px; line-height: 17px; letter-spacing: 0.04em; font-variant-numeric: tabular-nums;
+  color: #fff; background: linear-gradient(#252623, #131411);
+  border: 0.7px solid rgba(255, 255, 255, 0.15); border-radius: 2px;
+  box-shadow: 0 1.5px 1.3px rgba(0, 0, 0, 0.12), 0.5px 6px 5px rgba(87, 86, 74, 0.18);
+}
+
+/* 首屏 */
+.hero {
+  min-height: 100svh;
+  display: grid; place-items: center; text-align: center;
+  padding: 6.5rem 1.2rem 3rem;
+}
+.hero h1 {
+  margin: 0; font-weight: 400; font-size: clamp(2rem, 5.4vw, 3.1rem); letter-spacing: 0.12em; color: var(--ink-strong);
+}
+.hero .lede { margin: 0.6rem 0 0; color: var(--secondary); font-size: clamp(0.98rem, 2.4vw, 1.12rem); letter-spacing: 0.08em; }
+.hero .exhibit { margin-top: clamp(2.6rem, 6vh, 4rem); text-align: left; }
+.hero .exhibit .art { width: min(300px, 64vw); }
+.hero .actions { margin-top: clamp(1.8rem, 5vh, 3rem); display: flex; flex-direction: column; align-items: center; gap: 0.4rem; }
+
+.cta {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 6px;
+  padding: 0.5rem 1rem; min-height: 44px;
+  font: inherit; font-size: 1.32rem; letter-spacing: 0.1em; color: var(--ink-strong);
+  background: none; border: 0; cursor: pointer; text-decoration: none;
+}
+.cta::after { content: ""; width: 24px; height: 0.75px; background: var(--accent); opacity: 0.7; transition: width 0.4s var(--ease); }
+.cta:hover::after { width: 44px; }
+.cta[aria-disabled="true"] { cursor: default; }
+.note { font-size: 0.8rem; color: var(--secondary); letter-spacing: 0.06em; }
+
+/* 挂画动画：画框从略高、略离墙的位置落到挂钩上 */
+@keyframes hang {
+  0% { opacity: 0; transform: translateY(-18px) scale(1.015); filter: drop-shadow(0 12px 18px rgba(40, 34, 22, 0.22)); }
+  65% { opacity: 1; transform: translateY(2px) scale(1); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.hero h1 { animation: arrive 0.9s var(--ease) 0.05s both; }
+.hero .lede { animation: arrive 0.9s var(--ease) 0.15s both; }
+.hero .exhibit .art { animation: hang 1.25s var(--ease) 0.35s both; }
+.hero .exhibit .hook { animation: arrive 0.6s ease 0.1s both; }
+.hero .plaque, .hero .actions { animation: arrive 0.8s var(--ease) 1.35s both; }
+
+/* 通用分区 */
+section { padding: clamp(5rem, 12vh, 8rem) clamp(1.2rem, 5vw, 3rem); }
+.section-head { max-width: 60rem; margin: 0 auto clamp(2.5rem, 6vh, 4rem); }
+.eyebrow { font-size: 0.78rem; letter-spacing: 0.3em; color: var(--accent-text); text-transform: uppercase; }
+h2 { text-wrap: balance; margin: 0.5rem 0 0; font-weight: 400; font-size: clamp(1.6rem, 3.8vw, 2.2rem); letter-spacing: 0.08em; color: var(--ink-strong); line-height: 1.5; }
+.section-head p { max-width: var(--measure); color: var(--secondary); margin: 1rem 0 0; }
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* 体验：步骤 + 一分钟试看 */
+.ritual { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(2rem, 6vw, 6rem); max-width: 60rem; margin: 0 auto; align-items: center; }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps li { position: relative; padding: 0 0 2.2rem 4.2rem; }
+.steps li::before {
+  counter-increment: step; content: "0" counter(step);
+  position: absolute; left: 0; top: 0.2rem; font-size: 0.75rem; letter-spacing: 0.1em;
+  color: #fff; background: linear-gradient(#252623, #131411); border-radius: 2px; padding: 1px 8px;
+}
+.steps h3 { margin: 0; font-weight: 400; font-size: 1.18rem; color: var(--ink-strong); }
+.steps p { margin: 0.3rem 0 0; color: var(--secondary); font-size: 0.95rem; }
+
+.demo { text-align: center; }
+.demo .exhibit { text-align: left; }
+.demo .art { width: min(320px, 78vw); transition: opacity 0.6s ease; }
+.demo .time { margin: 1.6rem 0 0.2rem; font-size: 2.1rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; color: var(--ink-strong); min-height: 3.4rem; }
+.demo .status { min-height: 1.6rem; font-size: 0.92rem; color: var(--secondary); }
+.demo .cta { font-size: 1.12rem; margin-top: 0.4rem; }
+
+/* 六个展厅：一面横向展墙 */
+.halls { padding-left: 0; padding-right: 0; }
+.halls .section-head { padding: 0 clamp(1.2rem, 5vw, 3rem); }
+.wall-track {
+  display: flex; align-items: flex-start; gap: clamp(3rem, 8vw, 7rem);
+  overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+  padding: 2rem max(1.2rem, calc((100vw - 60rem) / 2)) 2.5rem;
+}
+.wall-track::-webkit-scrollbar { display: none; }
+.wall-track figure { margin: 0; flex: 0 0 auto; scroll-snap-align: center; display: flex; flex-direction: column; }
+.wall-track .exhibit { align-self: center; margin-top: 15px; }
+.wall-track .art { height: clamp(220px, 34vh, 300px); width: auto; }
+.wall-track figcaption { margin-top: 0.4rem; max-width: 19rem; }
+.wall-track .hall { display: block; margin-top: 1rem; font-size: 1.12rem; color: var(--ink-strong); letter-spacing: 0.08em; }
+.wall-track .meta { display: block; font-size: 0.86rem; color: var(--secondary); line-height: 1.7; }
+.tag { display: inline-block; margin-left: 0.5rem; padding: 0 6px; font-size: 0.68rem; letter-spacing: 0.08em; border: 0.75px solid var(--accent); color: var(--accent-text); border-radius: 3px; vertical-align: 0.2em; }
+.wall-hint { text-align: center; font-size: 0.8rem; color: var(--secondary); letter-spacing: 0.2em; }
+
+/* 原则：像展签一样排列 */
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 2.4rem clamp(2rem, 4vw, 3.5rem); max-width: 60rem; margin: 0 auto; }
+.principles article { border-top: 0.75px solid var(--hairline); padding-top: 1.2rem; }
+.principles h3 { margin: 0; font-weight: 400; font-size: 1.08rem; color: var(--ink-strong); }
+.principles p { margin: 0.5rem 0 0; font-size: 0.93rem; color: var(--secondary); }
+
+/* 价格 */
+.plans { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(1.5rem, 4vw, 3rem); max-width: 60rem; margin: 0 auto; }
+.plan { background: rgba(251, 250, 246, 0.72); border: 0.75px solid var(--hairline); border-radius: 6px; padding: 2rem 2rem 1.6rem; backdrop-filter: blur(2px); }
+.plan.pro { border-color: rgba(154, 138, 106, 0.55); }
+.plan h3 { margin: 0; font-weight: 400; font-size: 1.3rem; color: var(--ink-strong); letter-spacing: 0.06em; }
+.plan .price { margin: 0.4rem 0 1rem; color: var(--secondary); font-size: 0.92rem; }
+.plan ul { list-style: none; margin: 0; padding: 0; font-size: 0.95rem; }
+.plan li { padding: 0.45rem 0; border-top: 0.75px solid var(--hairline); }
+.prices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; margin: 0.6rem 0 1.2rem; text-align: center; }
+.prices div { padding: 0.7rem 0.2rem; border: 0.75px solid var(--hairline); border-radius: 5px; }
+.prices div.best { border-color: var(--accent); }
+.prices b { display: block; font-weight: 400; font-size: 1.4rem; color: var(--ink-strong); letter-spacing: 0.02em; }
+.prices span { font-size: 0.78rem; color: var(--secondary); }
+.prices em { display: block; font-style: normal; font-size: 0.72rem; color: var(--accent-text); }
+.fineprint { max-width: 60rem; margin: 1.4rem auto 0; font-size: 0.8rem; color: var(--secondary); }
+
+/* 问答 */
+.faq { max-width: 44rem; margin: 0 auto; }
+.faq details { border-top: 0.75px solid var(--hairline); }
+.faq details:last-child { border-bottom: 0.75px solid var(--hairline); }
+.faq summary { cursor: pointer; list-style: none; padding: 1.1rem 2rem 1.1rem 0; position: relative; color: var(--ink-strong); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 0.2rem; top: 1rem; color: var(--accent); font-size: 1.2rem; transition: transform 0.3s ease; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 1.2rem; color: var(--secondary); font-size: 0.95rem; }
+
+/* 结尾 */
+.closing { text-align: center; }
+.closing h2 { letter-spacing: 0.14em; }
+.closing .cta { margin-top: 1.4rem; }
+
+footer {
+  padding: 3rem clamp(1.2rem, 5vw, 3rem) 3.5rem; font-size: 0.8rem; color: var(--secondary);
+  border-top: 0.75px solid var(--hairline);
+}
+.footer-inner { max-width: 60rem; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: baseline; }
+footer nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; }
+footer nav a { text-decoration: none; }
+footer nav a:hover { color: var(--ink); }
+footer p { margin: 0; }
+
+/* 法律文档 */
+.doc { max-width: 44rem; margin: 0 auto; padding: 7rem clamp(1.2rem, 5vw, 2rem) 4rem; }
+.doc header { margin-bottom: 2.6rem; }
+.doc h1 { margin: 0.4rem 0 0.6rem; font-weight: 400; font-size: clamp(1.8rem, 5vw, 2.4rem); letter-spacing: 0.08em; color: var(--ink-strong); }
+.doc .dates { font-size: 0.85rem; color: var(--secondary); margin: 0; }
+.doc .summary { background: rgba(251, 250, 246, 0.75); border: 0.75px solid var(--hairline); border-radius: 6px; padding: 1.2rem 1.4rem; font-size: 0.95rem; }
+.doc .summary p { margin: 0.2rem 0; }
+.doc h2 { font-size: 1.25rem; margin: 2.6rem 0 0.6rem; letter-spacing: 0.04em; }
+.doc h3 { font-weight: 400; font-size: 1.05rem; margin: 1.6rem 0 0.3rem; color: var(--ink-strong); }
+.doc p, .doc li { font-size: 0.97rem; }
+.doc ul, .doc ol { padding-left: 1.3rem; }
+.doc li { margin: 0.25rem 0; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 0.9rem; margin: 0.8rem 0; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 0.6rem 0.6rem 0.6rem 0; border-bottom: 0.75px solid var(--hairline); }
+.doc th { font-weight: 400; color: var(--secondary); }
+.doc .caps { text-transform: uppercase; letter-spacing: 0.01em; font-size: 0.9rem; }
+.doc-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-top: 3rem; padding-top: 1.4rem; border-top: 0.75px solid var(--hairline); font-size: 0.85rem; color: var(--secondary); }
+.doc-nav a { text-decoration: none; }
+.doc-nav a[aria-current="page"] { color: var(--ink-strong); text-decoration: underline; text-decoration-color: var(--accent); }
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .topbar nav .optional { display: none; }
+  .ritual, .plans { grid-template-columns: 1fr; }
+  .demo { order: -1; }
+  .steps li { padding-left: 3.6rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.2s !important; }
+  .reveal { transform: none; }
+}
+
+@media print {
+  body { background: #fff; }
+  body::before, .topbar, .doc-nav { display: none; }
+  .doc { padding-top: 0; }
+}
