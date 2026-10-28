@@ -3,12 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Terms of Use · Between Frames</title>
-<meta name="description" content="The terms that apply when you use Between Frames and Between Frames Pro.">
+<title data-i18n="terms.meta.title">Terms of Use · Between Frames</title>
+<meta name="description" content="The terms that apply when you use Between Frames and Between Frames Pro." data-i18n-content="terms.meta.description">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
+<!-- language-metadata -->
+<link rel="canonical" href="https://www.txxy.in/between-frames/en/terms.html">
+<link rel="alternate" hreflang="en" href="https://www.txxy.in/between-frames/en/terms.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.txxy.in/between-frames/zh-Hans/terms.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.txxy.in/between-frames/zh-Hant/terms.html">
+<link rel="alternate" hreflang="ja" href="https://www.txxy.in/between-frames/ja/terms.html">
+<link rel="alternate" hreflang="ko" href="https://www.txxy.in/between-frames/ko/terms.html">
+<link rel="alternate" hreflang="x-default" href="https://www.txxy.in/between-frames/terms.html">
+<meta property="og:url" content="https://www.txxy.in/between-frames/en/terms.html">
+<!-- /language-metadata -->
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script src="assets/i18n.js" defer></script>
 <style>
 :root{--bg:#000;--ink:#F2F1EC;--body:#C9C9C4;--sec:#A3A39F;--line:rgba(255,255,255,.1);--sun:#E8A07E}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -41,117 +52,132 @@ footer a{color:var(--sec);text-decoration:none}footer a:hover{color:var(--ink)}
 footer span{margin-left:auto}
 @media (max-width:640px){body{font-size:16px}main{padding-top:48px}.toc{columns:1}.summary{padding:22px}footer span{margin-left:0;width:100%}}
 </style>
+<link rel="stylesheet" href="assets/i18n.css">
 </head>
 <body>
-<nav><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="30" height="30">Between Frames</a><a class="back" href="index.html">← Home</a></nav>
+<nav><a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="30" height="30">Between Frames</a><label class="language-switcher" hidden>
+      <span id="language-label" class="visually-hidden" data-i18n="common.language">Language</span>
+      <select id="language-select" aria-labelledby="language-label" autocomplete="off">
+        <option value="system" data-i18n="common.followBrowser">Follow browser</option>
+        <option value="en" lang="en">English</option>
+        <option value="zh-Hans" lang="zh-Hans">简体中文</option>
+        <option value="zh-Hant" lang="zh-Hant">繁體中文</option>
+        <option value="ja" lang="ja">日本語</option>
+        <option value="ko" lang="ko">한국어</option>
+      </select>
+    </label><a class="back" href="index.html" data-i18n="common.back">← Home</a></nav>
 
 <main>
-  <div class="label">Legal</div>
-  <h1>Terms of Use</h1>
-  <p class="updated">Effective October 13, 2026</p>
+  <div class="label" data-i18n="common.legal">Legal</div>
+  <h1 data-i18n="common.terms">Terms of Use</h1>
+  <p class="updated" data-i18n="common.effectiveDate">Effective October 13, 2026</p>
 
   <section class="summary" aria-labelledby="short">
-    <h2 id="short">The short version</h2>
+    <h2 id="short" data-i18n="common.summary">The short version</h2>
     <ul>
-      <li>Between Frames helps you review your photos and videos. You decide what to delete, and iOS asks you to confirm.</li>
-      <li>Deleted items go to Recently Deleted. After iOS removes them from there, they cannot be recovered. Keep backups of what matters.</li>
-      <li>Pro is billed by Apple. Subscriptions renew automatically until you cancel in iOS Settings.</li>
+      <li data-i18n="terms.summary.li1">Between Frames helps you review your photos and videos. You decide what to delete, and iOS asks you to confirm.</li>
+      <li data-i18n="terms.summary.li2">Deleted items go to Recently Deleted. After iOS removes them from there, they cannot be recovered. Keep backups of what matters.</li>
+      <li data-i18n="terms.summary.li3">Pro is billed by Apple. Subscriptions renew automatically until you cancel in iOS Settings.</li>
     </ul>
-    <p style="margin-top:14px">This summary is for convenience. The full terms below apply.</p>
+    <p style="margin-top:14px" data-i18n="terms.summary.p1">This summary is for convenience. The full terms below apply.</p>
   </section>
 
-  <ul class="toc" aria-label="Contents">
-    <li><a href="#agreement">1. Agreement</a></li>
-    <li><a href="#license">2. License</a></li>
-    <li><a href="#deletion">3. Your photos and deletion</a></li>
-    <li><a href="#free-pro">4. Free use and Pro</a></li>
-    <li><a href="#billing">5. Billing, renewal and refunds</a></li>
-    <li><a href="#use">6. Acceptable use</a></li>
-    <li><a href="#ip">7. Intellectual property</a></li>
-    <li><a href="#privacy">8. Privacy</a></li>
-    <li><a href="#third">9. Third-party services</a></li>
-    <li><a href="#warranty">10. Disclaimer of warranties</a></li>
-    <li><a href="#liability">11. Limitation of liability</a></li>
-    <li><a href="#apple">12. Apple App Store terms</a></li>
-    <li><a href="#law">13. Governing law and disputes</a></li>
-    <li><a href="#changes">14. Changes and termination</a></li>
-    <li><a href="#contact">15. Contact</a></li>
+  <ul class="toc" aria-label="Contents" data-i18n-aria-label="common.contents">
+    <li><a href="#agreement" data-i18n="terms.sections.agreement">1. Agreement</a></li>
+    <li><a href="#license" data-i18n="terms.sections.license">2. License</a></li>
+    <li><a href="#deletion" data-i18n="terms.sections.deletion">3. Your photos and deletion</a></li>
+    <li><a href="#free-pro" data-i18n="terms.sections.free-pro">4. Free use and Pro</a></li>
+    <li><a href="#billing" data-i18n="terms.sections.billing">5. Billing, renewal and refunds</a></li>
+    <li><a href="#use" data-i18n="terms.sections.use">6. Acceptable use</a></li>
+    <li><a href="#ip" data-i18n="terms.sections.ip">7. Intellectual property</a></li>
+    <li><a href="#privacy" data-i18n="terms.sections.privacy">8. Privacy</a></li>
+    <li><a href="#third" data-i18n="terms.sections.third">9. Third-party services</a></li>
+    <li><a href="#warranty" data-i18n="terms.sections.warranty">10. Disclaimer of warranties</a></li>
+    <li><a href="#liability" data-i18n="terms.sections.liability">11. Limitation of liability</a></li>
+    <li><a href="#apple" data-i18n="terms.sections.apple">12. Apple App Store terms</a></li>
+    <li><a href="#law" data-i18n="terms.sections.law">13. Governing law and disputes</a></li>
+    <li><a href="#changes" data-i18n="terms.sections.changes">14. Changes and termination</a></li>
+    <li><a href="#contact" data-i18n="terms.sections.contact">15. Contact</a></li>
   </ul>
 
-  <h2 id="agreement">1. Agreement</h2>
-  <p>These Terms of Use ("Terms") are an agreement between you and the independent developer of Between Frames ("we", "us"). They govern your use of the Between Frames iPhone app (the "app") and this website. By downloading or using the app, you agree to these Terms. If you do not agree, do not use the app.</p>
-  <p>You must be old enough to agree to these Terms where you live, or have permission from a parent or guardian.</p>
+  <h2 id="agreement" data-i18n="terms.sections.agreement">1. Agreement</h2>
+  <p data-i18n="terms.agreement.p1">These Terms of Use ("Terms") are an agreement between you and the independent developer of Between Frames ("we", "us"). They govern your use of the Between Frames iPhone app (the "app") and this website. By downloading or using the app, you agree to these Terms. If you do not agree, do not use the app.</p>
+  <p data-i18n="terms.agreement.p2">You must be old enough to agree to these Terms where you live, or have permission from a parent or guardian.</p>
 
-  <h2 id="license">2. License</h2>
-  <p>We grant you a personal, non-exclusive, non-transferable, revocable license to use the app on Apple devices that you own or control, as permitted by the Usage Rules in the Apple Media Services Terms and Conditions. You may not copy, modify, distribute, sell, rent or lease the app, or reverse engineer or attempt to extract its source code, except where the law allows it.</p>
+  <h2 id="license" data-i18n="terms.sections.license">2. License</h2>
+  <p data-i18n="terms.license.p1">We grant you a personal, non-exclusive, non-transferable, revocable license to use the app on Apple devices that you own or control, as permitted by the Usage Rules in the Apple Media Services Terms and Conditions. You may not copy, modify, distribute, sell, rent or lease the app, or reverse engineer or attempt to extract its source code, except where the law allows it.</p>
 
-  <h2 id="deletion">3. Your photos and deletion</h2>
-  <p>The app helps you review items in your Photos library and mark items for deletion. Nothing is deleted until you finish a group, review the marked items under <strong>One last look</strong>, and confirm in the iOS system dialog. You are responsible for the items you choose to delete.</p>
+  <h2 id="deletion" data-i18n="terms.sections.deletion">3. Your photos and deletion</h2>
+  <p data-i18n="terms.deletion.p1">The app helps you review items in your Photos library and mark items for deletion. Nothing is deleted until you finish a group, review the marked items under <strong>One last look</strong>, and confirm in the iOS system dialog. You are responsible for the items you choose to delete.</p>
   <ul>
-    <li>Deleted items move to Recently Deleted in the Photos app, where iOS typically keeps them for up to 30 days. After that, or if you remove them from Recently Deleted yourself, they cannot be recovered by us or the app.</li>
-    <li>If you use iCloud Photos, deletions sync to your other devices that use the same library.</li>
-    <li>Storage savings shown in the app are estimates. Space may not be freed until items leave Recently Deleted.</li>
+    <li data-i18n="terms.deletion.li1">Deleted items move to Recently Deleted in the Photos app, where iOS typically keeps them for up to 30 days. After that, or if you remove them from Recently Deleted yourself, they cannot be recovered by us or the app.</li>
+    <li data-i18n="terms.deletion.li2">If you use iCloud Photos, deletions sync to your other devices that use the same library.</li>
+    <li data-i18n="terms.deletion.li3">Storage savings shown in the app are estimates. Space may not be freed until items leave Recently Deleted.</li>
   </ul>
-  <p>Keep a backup of anything important. You keep all rights in your photos and videos. We do not receive them; see the <a href="privacy.html">Privacy Policy</a>.</p>
+  <p data-i18n="terms.deletion.p2">Keep a backup of anything important. You keep all rights in your photos and videos. We do not receive them; see the <a href="privacy.html">Privacy Policy</a>.</p>
 
-  <h2 id="free-pro">4. Free use and Pro</h2>
-  <p>The app can be used for free with daily limits that are shown in the app, currently three new review groups per local calendar day, shared between photos and videos, with up to 15 items each. Between Frames Pro removes the daily group limit and offers larger groups. Pro is available as a monthly subscription, a yearly subscription, or a one-time lifetime purchase. Features, limits and plans are described in the app and may change over time, as described in section 14.</p>
+  <h2 id="free-pro" data-i18n="terms.sections.free-pro">4. Free use and Pro</h2>
+  <p data-i18n="terms.free-pro.p1">The app can be used for free with daily limits that are shown in the app, currently three new review groups per local calendar day, shared between photos and videos, with up to 15 items each. Between Frames Pro removes the daily group limit and offers larger groups. Pro is available as a monthly subscription, a yearly subscription, or a one-time lifetime purchase. Features, limits and plans are described in the app and may change over time, as described in section 14.</p>
 
-  <h2 id="billing">5. Billing, renewal and refunds</h2>
+  <h2 id="billing" data-i18n="terms.sections.billing">5. Billing, renewal and refunds</h2>
   <ul>
-    <li><strong>Payment.</strong> All purchases are made through Apple's App Store and charged to your Apple Account. Prices are shown in the app and the App Store in your local currency and may include taxes.</li>
-    <li><strong>Automatic renewal.</strong> Monthly and yearly subscriptions renew automatically at the end of each period at the then-current price unless you turn off auto-renew at least 24 hours before the period ends. Your account is charged for renewal within 24 hours before the end of the current period.</li>
-    <li><strong>Free trials.</strong> If a free trial is offered and you are eligible, the subscription starts when the trial ends unless you cancel at least 24 hours before it ends. Eligibility is determined by Apple.</li>
-    <li><strong>Managing and cancelling.</strong> Manage or cancel a subscription in iOS Settings → your name → Subscriptions. Cancelling stops future renewals; you keep Pro until the end of the period you paid for.</li>
-    <li><strong>Lifetime.</strong> The lifetime purchase is a one-time payment that does not renew and gives access to Pro for as long as we offer and support the app.</li>
-    <li><strong>Refunds.</strong> Refunds are handled by Apple under its policies. You can request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We cannot issue refunds directly.</li>
-    <li><strong>Restore.</strong> Use Restore Purchases in the app to restore Pro on a device signed in with the same Apple Account.</li>
+    <li data-i18n="terms.billing.li1"><strong>Payment.</strong> All purchases are made through Apple's App Store and charged to your Apple Account. Prices are shown in the app and the App Store in your local currency and may include taxes.</li>
+    <li data-i18n="terms.billing.li2"><strong>Automatic renewal.</strong> Monthly and yearly subscriptions renew automatically at the end of each period at the then-current price unless you turn off auto-renew at least 24 hours before the period ends. Your account is charged for renewal within 24 hours before the end of the current period.</li>
+    <li data-i18n="terms.billing.li3"><strong>Free trials.</strong> If a free trial is offered and you are eligible, the subscription starts when the trial ends unless you cancel at least 24 hours before it ends. Eligibility is determined by Apple.</li>
+    <li data-i18n="terms.billing.li4"><strong>Managing and cancelling.</strong> Manage or cancel a subscription in iOS Settings → your name → Subscriptions. Cancelling stops future renewals; you keep Pro until the end of the period you paid for.</li>
+    <li data-i18n="terms.billing.li5"><strong>Lifetime.</strong> The lifetime purchase is a one-time payment that does not renew and gives access to Pro for as long as we offer and support the app.</li>
+    <li data-i18n="terms.billing.li6"><strong>Refunds.</strong> Refunds are handled by Apple under its policies. You can request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. We cannot issue refunds directly.</li>
+    <li data-i18n="terms.billing.li7"><strong>Restore.</strong> Use Restore Purchases in the app to restore Pro on a device signed in with the same Apple Account.</li>
   </ul>
 
-  <h2 id="use">6. Acceptable use</h2>
-  <p>Use the app only in compliance with the law and these Terms. Do not misuse the app, interfere with its operation or our services, circumvent purchase or usage limits, or use the app to process content you have no right to access.</p>
+  <h2 id="use" data-i18n="terms.sections.use">6. Acceptable use</h2>
+  <p data-i18n="terms.use.p1">Use the app only in compliance with the law and these Terms. Do not misuse the app, interfere with its operation or our services, circumvent purchase or usage limits, or use the app to process content you have no right to access.</p>
 
-  <h2 id="ip">7. Intellectual property</h2>
-  <p>The app, its design, text, graphics, the Between Frames name and icon, and this website are owned by us or our licensors and are protected by law. These Terms do not give you any rights to our trademarks. If you send us feedback, we may use it without obligation to you.</p>
+  <h2 id="ip" data-i18n="terms.sections.ip">7. Intellectual property</h2>
+  <p data-i18n="terms.ip.p1">The app, its design, text, graphics, the Between Frames name and icon, and this website are owned by us or our licensors and are protected by law. These Terms do not give you any rights to our trademarks. If you send us feedback, we may use it without obligation to you.</p>
 
-  <h2 id="privacy">8. Privacy</h2>
-  <p>Our <a href="privacy.html">Privacy Policy</a> explains how we handle information. In short, your photos and videos stay on your device.</p>
+  <h2 id="privacy" data-i18n="terms.sections.privacy">8. Privacy</h2>
+  <p data-i18n="terms.privacy.p1">Our <a href="privacy.html">Privacy Policy</a> explains how we handle information. In short, your photos and videos stay on your device.</p>
 
-  <h2 id="third">9. Third-party services</h2>
-  <p>The app relies on services from third parties, including Apple (the App Store, Photos, iCloud Photos and Maps) and RevenueCat (purchase validation). Their own terms and policies apply to your use of those services, and we are not responsible for them. You must also comply with any applicable third-party terms, such as your wireless data service agreement.</p>
+  <h2 id="third" data-i18n="terms.sections.third">9. Third-party services</h2>
+  <p data-i18n="terms.third.p1">The app relies on services from third parties, including Apple (the App Store, Photos, iCloud Photos and Maps) and RevenueCat (purchase validation). Their own terms and policies apply to your use of those services, and we are not responsible for them. You must also comply with any applicable third-party terms, such as your wireless data service agreement.</p>
 
-  <h2 id="warranty">10. Disclaimer of warranties</h2>
-  <p>To the fullest extent permitted by law, the app and website are provided <strong>"as is" and "as available"</strong>, without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, and that the app will be uninterrupted, error-free, or that it will preserve or delete any particular content. Some jurisdictions do not allow these exclusions, so some may not apply to you.</p>
+  <h2 id="warranty" data-i18n="terms.sections.warranty">10. Disclaimer of warranties</h2>
+  <p data-i18n="terms.warranty.p1">To the fullest extent permitted by law, the app and website are provided <strong>"as is" and "as available"</strong>, without warranties of any kind, whether express or implied, including warranties of merchantability, fitness for a particular purpose, non-infringement, and that the app will be uninterrupted, error-free, or that it will preserve or delete any particular content. Some jurisdictions do not allow these exclusions, so some may not apply to you.</p>
 
-  <h2 id="liability">11. Limitation of liability</h2>
-  <p>To the fullest extent permitted by law, we will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, photos, videos, profits or goodwill, arising from or related to your use of, or inability to use, the app, including items you choose to delete. Our total liability for any claim relating to the app or these Terms will not exceed the greater of the amount you paid for the app or Pro in the 12 months before the claim, or US$50.</p>
-  <p>Nothing in these Terms limits liability that cannot be limited by law, or your rights as a consumer under the mandatory laws of the place where you live.</p>
+  <h2 id="liability" data-i18n="terms.sections.liability">11. Limitation of liability</h2>
+  <p data-i18n="terms.liability.p1">To the fullest extent permitted by law, we will not be liable for any indirect, incidental, special, consequential or punitive damages, or for any loss of data, photos, videos, profits or goodwill, arising from or related to your use of, or inability to use, the app, including items you choose to delete. Our total liability for any claim relating to the app or these Terms will not exceed the greater of the amount you paid for the app or Pro in the 12 months before the claim, or US$50.</p>
+  <p data-i18n="terms.liability.p2">Nothing in these Terms limits liability that cannot be limited by law, or your rights as a consumer under the mandatory laws of the place where you live.</p>
 
-  <h2 id="apple">12. Apple App Store terms</h2>
-  <p>If you downloaded the app from Apple's App Store, you and we acknowledge that:</p>
+  <h2 id="apple" data-i18n="terms.sections.apple">12. Apple App Store terms</h2>
+  <p data-i18n="terms.apple.p1">If you downloaded the app from Apple's App Store, you and we acknowledge that:</p>
   <ul>
-    <li>These Terms are between you and us only, not Apple. We, not Apple, are solely responsible for the app and its content.</li>
-    <li>Apple has no obligation to provide maintenance or support for the app.</li>
-    <li>If the app fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the app (if any). To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the app. Any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty are our responsibility, to the extent they are not disclaimed in these Terms.</li>
-    <li>We, not Apple, are responsible for addressing any claims by you or a third party relating to the app or your possession or use of it, including product liability claims, claims that the app fails to conform to any applicable legal or regulatory requirement, and claims under consumer protection, privacy or similar laws.</li>
-    <li>If a third party claims that the app or your possession and use of it infringes that party's intellectual property rights, we, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of that claim.</li>
-    <li>You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
-    <li>Apple and its subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
+    <li data-i18n="terms.apple.li1">These Terms are between you and us only, not Apple. We, not Apple, are solely responsible for the app and its content.</li>
+    <li data-i18n="terms.apple.li2">Apple has no obligation to provide maintenance or support for the app.</li>
+    <li data-i18n="terms.apple.li3">If the app fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price for the app (if any). To the maximum extent permitted by law, Apple has no other warranty obligation with respect to the app. Any other claims, losses, liabilities, damages, costs or expenses attributable to any failure to conform to any warranty are our responsibility, to the extent they are not disclaimed in these Terms.</li>
+    <li data-i18n="terms.apple.li4">We, not Apple, are responsible for addressing any claims by you or a third party relating to the app or your possession or use of it, including product liability claims, claims that the app fails to conform to any applicable legal or regulatory requirement, and claims under consumer protection, privacy or similar laws.</li>
+    <li data-i18n="terms.apple.li5">If a third party claims that the app or your possession and use of it infringes that party's intellectual property rights, we, not Apple, will be solely responsible for the investigation, defense, settlement and discharge of that claim.</li>
+    <li data-i18n="terms.apple.li6">You represent that you are not located in a country subject to a U.S. Government embargo or designated as a "terrorist supporting" country, and that you are not on any U.S. Government list of prohibited or restricted parties.</li>
+    <li data-i18n="terms.apple.li7">Apple and its subsidiaries are third-party beneficiaries of these Terms, and upon your acceptance, Apple will have the right (and will be deemed to have accepted the right) to enforce these Terms against you as a third-party beneficiary.</li>
   </ul>
-  <p>Where these Terms conflict with the Apple Media Services Terms and Conditions on usage rules, the Apple terms govern for that conflict.</p>
+  <p data-i18n="terms.apple.p2">Where these Terms conflict with the Apple Media Services Terms and Conditions on usage rules, the Apple terms govern for that conflict.</p>
 
-  <h2 id="law">13. Governing law and disputes</h2>
-  <p>These Terms are governed by the laws of the State of California, United States, without regard to its conflict-of-law rules. Before filing a claim, please contact us at <a href="mailto:hello@txxy.in">hello@txxy.in</a> so we can try to resolve the issue informally. Any dispute that is not resolved informally will be brought exclusively in the state or federal courts located in California, and you and we consent to their personal jurisdiction. Either party may bring an individual claim in small claims court where eligible. If you are a consumer in a country whose laws give you the right to bring proceedings in your home courts or under your local law, these Terms do not take that right away.</p>
+  <h2 id="law" data-i18n="terms.sections.law">13. Governing law and disputes</h2>
+  <p data-i18n="terms.law.p1">These Terms are governed by the laws of the State of California, United States, without regard to its conflict-of-law rules. Before filing a claim, please contact us at <a href="mailto:hello@txxy.in">hello@txxy.in</a> so we can try to resolve the issue informally. Any dispute that is not resolved informally will be brought exclusively in the state or federal courts located in California, and you and we consent to their personal jurisdiction. Either party may bring an individual claim in small claims court where eligible. If you are a consumer in a country whose laws give you the right to bring proceedings in your home courts or under your local law, these Terms do not take that right away.</p>
 
-  <h2 id="changes">14. Changes and termination</h2>
-  <p>We may update the app, change or discontinue features, and update these Terms. If we make material changes to these Terms, we will post them on this page, update the effective date, and give notice in the app or on this website when appropriate. Continued use after changes take effect means you accept them. Changes do not affect a subscription period you have already paid for.</p>
-  <p>You may stop using the app at any time by deleting it. We may suspend or end your license if you materially breach these Terms. Sections 3, 7, and 10 to 13 survive termination.</p>
-  <p>If any part of these Terms is found unenforceable, the rest remains in effect. Our failure to enforce a provision is not a waiver. These Terms, together with the Privacy Policy, are the entire agreement between you and us about the app.</p>
+  <h2 id="changes" data-i18n="terms.sections.changes">14. Changes and termination</h2>
+  <p data-i18n="terms.changes.p1">We may update the app, change or discontinue features, and update these Terms. If we make material changes to these Terms, we will post them on this page, update the effective date, and give notice in the app or on this website when appropriate. Continued use after changes take effect means you accept them. Changes do not affect a subscription period you have already paid for.</p>
+  <p data-i18n="terms.changes.p2">You may stop using the app at any time by deleting it. We may suspend or end your license if you materially breach these Terms. Sections 3, 7, and 10 to 13 survive termination.</p>
+  <p data-i18n="terms.changes.p3">If any part of these Terms is found unenforceable, the rest remains in effect. Our failure to enforce a provision is not a waiver. These Terms, together with the Privacy Policy, are the entire agreement between you and us about the app.</p>
 
-  <h2 id="contact">15. Contact</h2>
-  <p>Questions, support or legal notices: <a href="mailto:hello@txxy.in">hello@txxy.in</a>.</p>
+  <h2 id="contact" data-i18n="terms.sections.contact">15. Contact</h2>
+  <p data-i18n="terms.contact.p1">Questions, support or legal notices: <a href="mailto:hello@txxy.in">hello@txxy.in</a>.</p>
 </main>
 
-<footer><div><a href="index.html">Home</a><a href="privacy.html">Privacy Policy</a><a href="mailto:hello@txxy.in">Contact</a><span>© 2026 Between Frames</span></div></footer>
+<footer><div><a href="index.html" data-i18n="common.home">Home</a><a href="privacy.html" data-i18n="common.privacy">Privacy Policy</a><a href="mailto:hello@txxy.in" data-i18n="common.contact">Contact</a><span>© 2026 Between Frames</span>
+<!-- language-links -->
+<nav class="language-links" aria-label="Language" data-i18n-aria-label="common.language"><a href="en/terms.html" lang="en" hreflang="en">English</a><a href="zh-Hans/terms.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="zh-Hant/terms.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a><a href="ja/terms.html" lang="ja" hreflang="ja">日本語</a><a href="ko/terms.html" lang="ko" hreflang="ko">한국어</a></nav>
+<!-- /language-links -->
+</div></footer>
 </body>
 </html>

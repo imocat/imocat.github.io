@@ -3,19 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Between Frames: Revisit your camera roll, a few photos at a time</title>
-<meta name="description" content="Between Frames is a calm iPhone app for revisiting your photos and videos in small groups. Swipe to keep, mark what you don't need, and take one last look before iOS deletes anything. Your media stays on your device.">
+<title data-i18n="home.meta.title">Between Frames: Revisit your camera roll, a few photos at a time</title>
+<meta name="description" content="Between Frames is a calm iPhone app for revisiting your photos and videos in small groups. Swipe to keep, mark what you don't need, and take one last look before iOS deletes anything. Your media stays on your device." data-i18n-content="home.meta.description">
 <meta name="theme-color" content="#000000">
 <meta name="color-scheme" content="dark">
+<!-- language-metadata -->
+<link rel="canonical" href="https://www.txxy.in/between-frames/en/index.html">
+<link rel="alternate" hreflang="en" href="https://www.txxy.in/between-frames/en/index.html">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.txxy.in/between-frames/zh-Hans/index.html">
+<link rel="alternate" hreflang="zh-Hant" href="https://www.txxy.in/between-frames/zh-Hant/index.html">
+<link rel="alternate" hreflang="ja" href="https://www.txxy.in/between-frames/ja/index.html">
+<link rel="alternate" hreflang="ko" href="https://www.txxy.in/between-frames/ko/index.html">
+<link rel="alternate" hreflang="x-default" href="https://www.txxy.in/between-frames/index.html">
+<meta property="og:url" content="https://www.txxy.in/between-frames/en/index.html">
+<!-- /language-metadata -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Between Frames">
-<meta property="og:title" content="Between Frames: Keep the frame. Let the rest go.">
-<meta property="og:description" content="Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look.">
+<meta property="og:title" content="Between Frames: Keep the frame. Let the rest go." data-i18n-content="home.meta.ogTitle">
+<meta property="og:description" content="Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look." data-i18n-content="home.meta.ogDescription">
 <meta property="og:image" content="https://www.txxy.in/between-frames/assets/og.jpg">
 <meta name="apple-itunes-app" content="app-id=6821194555">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script src="assets/i18n.js" defer></script>
 <!--
   Between Frames landing page · direction 2 "Darkroom" (see design-demos/direction-approved.md).
   Reference: Halide (halide.cam) — pure black, one accent, tracked uppercase labels, the real UI as hero.
@@ -185,28 +196,40 @@ footer span{margin-left:auto}
   footer span{margin-left:0;width:100%}
 }
 </style>
+<link rel="stylesheet" href="assets/i18n.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="common.skip">Skip to content</a>
 
-<nav class="top" id="nav" aria-label="Main">
+<nav class="top" id="nav" aria-label="Main" data-i18n-aria-label="common.navigation">
   <div class="wrap">
     <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="30" height="30">Between Frames</a>
-    <div class="links"><a href="#how">How it works</a><a href="#privacy">Privacy</a><a href="#pro">Pro</a><a href="#faq">FAQ</a></div>
-    <a class="btn small" href="https://apps.apple.com/us/app/between-frames/id6821194555">Download</a>
+    <div class="links"><a href="#how" data-i18n="home.nav.a1">How it works</a><a href="#privacy" data-i18n="home.nav.a2">Privacy</a><a href="#pro" data-i18n="home.nav.a3">Pro</a><a href="#faq" data-i18n="home.nav.a4">FAQ</a></div>
+    <label class="language-switcher" hidden>
+      <span id="language-label" class="visually-hidden" data-i18n="common.language">Language</span>
+      <select id="language-select" aria-labelledby="language-label" autocomplete="off">
+        <option value="system" data-i18n="common.followBrowser">Follow browser</option>
+        <option value="en" lang="en">English</option>
+        <option value="zh-Hans" lang="zh-Hans">简体中文</option>
+        <option value="zh-Hant" lang="zh-Hant">繁體中文</option>
+        <option value="ja" lang="ja">日本語</option>
+        <option value="ko" lang="ko">한국어</option>
+      </select>
+    </label>
+    <a class="btn small" href="https://apps.apple.com/app/between-frames/id6821194555" data-i18n="home.nav.a5">Download</a>
   </div>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="label">For iPhone · Photos &amp; videos</div>
-    <h1>Keep the frame.<br><em>Let the rest go.</em></h1>
-    <p class="lead">Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look.</p>
+    <div class="label" data-i18n="home.hero.div1">For iPhone · Photos &amp; videos</div>
+    <h1 data-i18n="home.hero.h11">Keep the frame.<br><em>Let the rest go.</em></h1>
+    <p class="lead" data-i18n="home.hero.p1">Revisit your camera roll fifteen photos at a time. Nothing is deleted until you've had one last look.</p>
     <div class="ctas">
-      <a class="btn" href="https://apps.apple.com/us/app/between-frames/id6821194555">Download on the App Store</a>
-      <a class="btn ghost" href="#how">See how it works</a>
+      <a class="btn" href="https://apps.apple.com/app/between-frames/id6821194555" data-i18n="home.hero.a1">Download on the App Store</a>
+      <a class="btn ghost" href="#how" data-i18n="home.hero.a2">See how it works</a>
     </div>
-    <p class="meta">Free to start · iOS 16 or later</p>
+    <p class="meta" data-i18n="home.hero.p2">Free to start · iOS 16 or later</p>
   </div>
   <div class="strip" aria-hidden="true">
     <div class="film">
@@ -219,117 +242,120 @@ footer span{margin-left:auto}
     </div>
     <div class="lift"><img src="assets/photos/sunset.jpg" alt=""></div>
     <div class="drop"><img src="assets/photos/street.jpg" alt=""></div>
-    <div class="cap k"><b>Kept</b>swipe left</div>
-    <div class="cap d"><b>Let go</b>swipe up</div>
+    <div class="cap k" data-i18n="home.hero.div2"><b>Kept</b>swipe left</div>
+    <div class="cap d" data-i18n="home.hero.div3"><b>Let go</b>swipe up</div>
   </div>
 </header>
 
 <main id="main" class="wrap">
   <section class="feat" id="how">
     <div class="copy rv">
-      <div class="label">01 · Review</div>
-      <h2>One photo. One decision.</h2>
-      <p>Photos fill the screen, true to their shape. Swipe and move on. Anything you don't mark is kept.</p>
+      <div class="label" data-i18n="home.review.div1">01 · Review</div>
+      <h2 data-i18n="home.review.h21">One photo. One decision.</h2>
+      <p data-i18n="home.review.p1">Photos fill the screen, true to their shape. Swipe and move on. Anything you don't mark is kept.</p>
       <ul class="moves">
-        <li><span>Left</span>Keep it and see the next one.</li>
-        <li><span class="up">Up</span>Mark it for deletion. Review it again before anything is removed.</li>
-        <li><span>Undo</span>Changed your mind? It flies right back.</li>
+        <li data-i18n="home.review.li1"><span>Left</span>Keep it and see the next one.</li>
+        <li data-i18n="home.review.li2"><span class="up">Up</span>Mark it for deletion. Review it again before anything is removed.</li>
+        <li data-i18n="home.review.li3"><span>Undo</span>Changed your mind? It flies right back.</li>
       </ul>
     </div>
-    <div class="device rv"><img src="assets/screens/review.jpg" alt="Photo review in Between Frames: a single photo with progress at the top and Details, Favorite and Undo at the bottom" loading="lazy" width="603" height="1311"></div>
+    <div class="device rv"><img src="assets/screens/review.jpg" alt="Photo review in Between Frames: a single photo with progress at the top and Details, Favorite and Undo at the bottom" loading="lazy" width="603" height="1311" data-i18n-alt="home.images.review"></div>
   </section>
 
   <section class="feat flip">
     <div class="copy rv">
-      <div class="label">02 · One last look</div>
-      <h2>Nothing goes without a second glance.</h2>
-      <p>At the end of every group, see everything you marked. Tap anything you're unsure about to keep it. Then iOS asks you once to confirm.</p>
+      <div class="label" data-i18n="home.lastLook.div1">02 · One last look</div>
+      <h2 data-i18n="home.lastLook.h21">Nothing goes without a second glance.</h2>
+      <p data-i18n="home.lastLook.p1">At the end of every group, see everything you marked. Tap anything you're unsure about to keep it. Then iOS asks you once to confirm.</p>
       <ul class="moves">
-        <li><span>Safe</span>Deleted items wait in Recently Deleted, where iOS keeps them for up to 30 days.</li>
-        <li><span>Honest</span>Storage savings are counted only after iOS confirms.</li>
+        <li data-i18n="home.lastLook.li1"><span>Safe</span>Deleted items wait in Recently Deleted, where iOS keeps them for up to 30 days.</li>
+        <li data-i18n="home.lastLook.li2"><span>Honest</span>Storage savings are counted only after iOS confirms.</li>
       </ul>
     </div>
     <div class="pair rv">
-      <div class="device"><img src="assets/screens/lastlook.jpg" alt="One last look: the photos marked for deletion and a Delete 1 item button" loading="lazy" width="603" height="1311"></div>
-      <div class="device"><img src="assets/screens/done.jpg" alt="Group done: reviewed, kept and deleted counts and a Back to Today button" loading="lazy" width="603" height="1311"></div>
+      <div class="device"><img src="assets/screens/lastlook.jpg" alt="One last look: the photos marked for deletion and a Delete 1 item button" loading="lazy" width="603" height="1311" data-i18n-alt="home.images.lastlook"></div>
+      <div class="device"><img src="assets/screens/done.jpg" alt="Group done: reviewed, kept and deleted counts and a Back to Today button" loading="lazy" width="603" height="1311" data-i18n-alt="home.images.done"></div>
     </div>
   </section>
 
   <section class="feat">
     <div class="copy rv">
-      <div class="label">03 · Videos</div>
-      <h2>Your videos get the same calm.</h2>
-      <p>A full-screen vertical feed that plays as you go. Swipe up for the next one. Favorite, mute, mark or undo from the side.</p>
+      <div class="label" data-i18n="home.videos.div1">03 · Videos</div>
+      <h2 data-i18n="home.videos.h21">Your videos get the same calm.</h2>
+      <p data-i18n="home.videos.p1">A full-screen vertical feed that plays as you go. Swipe up for the next one. Favorite, mute, mark or undo from the side.</p>
     </div>
-    <div class="device rv"><img src="assets/screens/video.jpg" alt="Full-screen video review with Favorite, Pause, Sound, Delete and Undo controls" loading="lazy" width="603" height="1311"></div>
+    <div class="device rv"><img src="assets/screens/video.jpg" alt="Full-screen video review with Favorite, Pause, Sound, Delete and Undo controls" loading="lazy" width="603" height="1311" data-i18n-alt="home.images.video"></div>
   </section>
 
   <section class="feat flip">
     <div class="copy rv">
-      <div class="label">04 · Today</div>
-      <h2>Start wherever feels right.</h2>
-      <p>Your next group of photos is waiting on Today. Or jump straight to your videos, your screenshots, a single day, or one album.</p>
+      <div class="label" data-i18n="home.today.div1">04 · Today</div>
+      <h2 data-i18n="home.today.h21">Start wherever feels right.</h2>
+      <p data-i18n="home.today.p1">Your next group of photos is waiting on Today. Or jump straight to your videos, your screenshots, a single day, or one album.</p>
     </div>
-    <div class="device rv"><img src="assets/screens/today.jpg" alt="The Today screen: the next group of photos with a Start button, plus Videos, Screenshots, By date and Albums" loading="lazy" width="603" height="1311"></div>
+    <div class="device rv"><img src="assets/screens/today.jpg" alt="The Today screen: the next group of photos with a Start button, plus Videos, Screenshots, By date and Albums" loading="lazy" width="603" height="1311" data-i18n-alt="home.images.today"></div>
   </section>
 
   <div class="grid4 rv">
-    <div><div class="label">Groups</div><h3>Small enough to finish</h3><p>Fifteen items, about four minutes. Stop anytime and pick up exactly where you left off.</p></div>
-    <div><div class="label">Memory</div><h3>Done stays done</h3><p>Reviewed items don't come back on their own after a restart or a library refresh.</p></div>
-    <div><div class="label">Calm</div><h3>No scary counters</h3><p>You only see the group in front of you, never a mountain of everything left.</p></div>
-    <div><div class="label">Progress</div><h3>See what you've done</h3><p>Items reviewed and potential storage savings, split by photos and videos.</p></div>
+    <div><div class="label" data-i18n="home.principles.div1">Groups</div><h3 data-i18n="home.principles.h31">Small enough to finish</h3><p data-i18n="home.principles.p1">Fifteen items, about four minutes. Stop anytime and pick up exactly where you left off.</p></div>
+    <div><div class="label" data-i18n="home.principles.div2">Memory</div><h3 data-i18n="home.principles.h32">Done stays done</h3><p data-i18n="home.principles.p2">Reviewed items don't come back on their own after a restart or a library refresh.</p></div>
+    <div><div class="label" data-i18n="home.principles.div3">Calm</div><h3 data-i18n="home.principles.h33">No scary counters</h3><p data-i18n="home.principles.p3">You only see the group in front of you, never a mountain of everything left.</p></div>
+    <div><div class="label" data-i18n="home.principles.div4">Progress</div><h3 data-i18n="home.principles.h34">See what you've done</h3><p data-i18n="home.principles.p4">Items reviewed and potential storage savings, split by photos and videos.</p></div>
   </div>
 
   <section class="privacy rv" id="privacy">
-    <div class="label">Privacy</div>
-    <h2 class="h2">Your media stays on your device.</h2>
-    <p>Your photos, videos and review progress are processed on your device. Between Frames never uploads them.</p>
-    <ul class="facts"><li>No account</li><li>No ads</li><li>No usage analytics</li><li>No tracking</li></ul>
-    <a class="more" href="privacy.html">Read the Privacy Policy →</a>
+    <div class="label" data-i18n="home.privacy.div1">Privacy</div>
+    <h2 class="h2" data-i18n="home.privacy.h21">Your media stays on your device.</h2>
+    <p data-i18n="home.privacy.p1">Your photos, videos and review progress are processed on your device. Between Frames never uploads them.</p>
+    <ul class="facts"><li data-i18n="home.privacy.li1">No account</li><li data-i18n="home.privacy.li2">No ads</li><li data-i18n="home.privacy.li3">No usage analytics</li><li data-i18n="home.privacy.li4">No tracking</li></ul>
+    <a class="more" href="privacy.html" data-i18n="home.privacy.a1">Read the Privacy Policy →</a>
   </section>
 
   <section class="pro rv" id="pro">
     <div>
-      <div class="label">Free &amp; Pro</div>
-      <h2 class="h2">Three groups a day, free.</h2>
-      <p>Start up to three new groups every day, photos and videos combined, with up to 15 items each. Continuing a group never counts. Library, details and Progress are always free.</p>
-      <p style="margin-top:14px">Go Pro for unlimited groups and sessions of 15, 30, 45, 60 or 100 items.</p>
-      <p class="fine">Prices are shown in the App Store in your currency. Manage or cancel anytime in iOS Settings.</p>
+      <div class="label" data-i18n="home.pro.div1">Free &amp; Pro</div>
+      <h2 class="h2" data-i18n="home.pro.h21">Three groups a day, free.</h2>
+      <p data-i18n="home.pro.p1">Start up to three new groups every day, photos and videos combined, with up to 15 items each. Continuing a group never counts. Library, details and Progress are always free.</p>
+      <p style="margin-top:14px" data-i18n="home.pro.p2">Go Pro for unlimited groups and sessions of 15, 30, 45, 60 or 100 items.</p>
+      <p class="fine" data-i18n="home.pro.p3">Prices are shown in the App Store in your currency. Manage or cancel anytime in iOS Settings.</p>
     </div>
     <div class="tiers">
-      <div class="tier"><div><b>Monthly</b><small>Billed monthly</small></div></div>
-      <div class="tier"><div><b>Yearly</b><small>Billed yearly</small></div><em>3-day free trial*</em></div>
-      <div class="tier"><div><b>Lifetime</b><small>One-time purchase. No renewal.</small></div></div>
-      <p class="note">*For eligible new subscribers.</p>
+      <div class="tier"><div><b data-i18n="home.pro.b1">Monthly</b><small data-i18n="home.pro.small1">Billed monthly</small></div></div>
+      <div class="tier"><div><b data-i18n="home.pro.b2">Yearly</b><small data-i18n="home.pro.small2">Billed yearly</small></div><em data-i18n="home.pro.em1">3-day free trial*</em></div>
+      <div class="tier"><div><b data-i18n="home.pro.b3">Lifetime</b><small data-i18n="home.pro.small3">One-time purchase. No renewal.</small></div></div>
+      <p class="note" data-i18n="home.pro.p4">*For eligible new subscribers.</p>
     </div>
   </section>
 
   <section class="faq" id="faq">
-    <div class="rv"><div class="label">FAQ</div><h2 class="h2">Good questions.</h2></div>
+    <div class="rv"><div class="label" data-i18n="home.faq.div1">FAQ</div><h2 class="h2" data-i18n="home.faq.h21">Good questions.</h2></div>
     <div class="rv">
-      <details open><summary>Where do deleted photos go?</summary><p>To Recently Deleted in the Photos app. iOS keeps them there for up to 30 days, so you can still recover them.</p></details>
-      <details><summary>Does it work with iCloud Photos?</summary><p>Yes. When you delete items, the change syncs to your other devices that use the same iCloud Photos library.</p></details>
-      <details><summary>Does Between Frames upload my photos?</summary><p>No. Your photos and videos are processed on your iPhone and are never sent to us.</p></details>
-      <details><summary>What if I only allow access to selected photos?</summary><p>Between Frames works with the photos you choose. You can change access anytime in Progress or in iOS Settings.</p></details>
-      <details><summary>Can I start over?</summary><p>Yes. Reset review progress for All, Photos or Videos in Progress. Your deletion history and today's group count are kept.</p></details>
-      <details><summary>How do I cancel Pro?</summary><p>Subscriptions are managed by Apple. Open iOS Settings, tap your name, then Subscriptions. Lifetime is a one-time purchase and never renews.</p></details>
+      <details open><summary data-i18n="home.faq.summary1">Where do deleted photos go?</summary><p data-i18n="home.faq.p1">To Recently Deleted in the Photos app. iOS keeps them there for up to 30 days, so you can still recover them.</p></details>
+      <details><summary data-i18n="home.faq.summary2">Does it work with iCloud Photos?</summary><p data-i18n="home.faq.p2">Yes. When you delete items, the change syncs to your other devices that use the same iCloud Photos library.</p></details>
+      <details><summary data-i18n="home.faq.summary3">Does Between Frames upload my photos?</summary><p data-i18n="home.faq.p3">No. Your photos and videos are processed on your iPhone and are never sent to us.</p></details>
+      <details><summary data-i18n="home.faq.summary4">What if I only allow access to selected photos?</summary><p data-i18n="home.faq.p4">Between Frames works with the photos you choose. You can change access anytime in Progress or in iOS Settings.</p></details>
+      <details><summary data-i18n="home.faq.summary5">Can I start over?</summary><p data-i18n="home.faq.p5">Yes. Reset review progress for All, Photos or Videos in Progress. Your deletion history and today's group count are kept.</p></details>
+      <details><summary data-i18n="home.faq.summary6">How do I cancel Pro?</summary><p data-i18n="home.faq.p6">Subscriptions are managed by Apple. Open iOS Settings, tap your name, then Subscriptions. Lifetime is a one-time purchase and never renews.</p></details>
     </div>
   </section>
 
   <section class="end rv" id="download">
-    <img src="assets/icon.png" alt="Between Frames app icon" width="104" height="104">
-    <h2>Start with fifteen.</h2>
-    <p>Free on the App Store for iPhone.</p>
-    <a class="btn" href="https://apps.apple.com/us/app/between-frames/id6821194555">Download on the App Store</a>
+    <img src="assets/icon.png" alt="Between Frames app icon" width="104" height="104" data-i18n-alt="home.images.icon">
+    <h2 data-i18n="home.download.h21">Start with fifteen.</h2>
+    <p data-i18n="home.download.p1">Free on the App Store for iPhone.</p>
+    <a class="btn" href="https://apps.apple.com/app/between-frames/id6821194555" data-i18n="home.download.a1">Download on the App Store</a>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Use</a>
-    <a href="mailto:hello@txxy.in">Contact</a>
+    <a href="privacy.html" data-i18n="common.privacy">Privacy Policy</a>
+    <a href="terms.html" data-i18n="common.terms">Terms of Use</a>
+    <a href="mailto:hello@txxy.in" data-i18n="common.contact">Contact</a>
     <span>© 2026 Between Frames</span>
+    <!-- language-links -->
+<nav class="language-links" aria-label="Language" data-i18n-aria-label="common.language"><a href="en/index.html" lang="en" hreflang="en">English</a><a href="zh-Hans/index.html" lang="zh-Hans" hreflang="zh-Hans">简体中文</a><a href="zh-Hant/index.html" lang="zh-Hant" hreflang="zh-Hant">繁體中文</a><a href="ja/index.html" lang="ja" hreflang="ja">日本語</a><a href="ko/index.html" lang="ko" hreflang="ko">한국어</a></nav>
+    <!-- /language-links -->
   </div>
 </footer>
 
