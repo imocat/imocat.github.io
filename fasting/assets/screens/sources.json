@@ -1,0 +1,16 @@
+{
+  "assets/screens/today-zh-hans.png": "web/qa/app-current/today-zh-hans.png",
+  "assets/screens/records-zh-hans.png": "web/qa/app-current/records-zh-hans.png",
+  "assets/screens/health-zh-hans.png": "web/qa/app-current/health-zh-hans.png",
+  "assets/screens/today-zh-hant.png": "web/qa/app-current/today-zh-hant.png",
+  "assets/screens/records-zh-hant.png": "web/qa/app-current/records-zh-hant.png",
+  "assets/screens/health-zh-hant.png": "web/qa/app-current/health-zh-hant.png",
+  "assets/screens/today-en.png": "web/qa/app-current/today-en.png",
+  "assets/screens/records-en.png": "web/qa/app-current/records-en.png",
+  "assets/screens/health-en.png": "web/qa/app-current/health-en.png",
+  "assets/screens/watch-zh.png": "web/qa/app-current/watch-zh.png",
+  "assets/screens/watch-en.png": "web/qa/app-current/watch-en.png",
+  "assets/screens/support-en.png": "web/qa/app-current/support-en.png",
+  "assets/screens/support-zh-hant.png": "web/qa/app-current/support-zh-hant.png",
+  "assets/screens/support-zh-hans.png": "web/qa/app-current/support-zh-hans.png"
+}
